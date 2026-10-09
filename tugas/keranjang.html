@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tugas Web - Keranjang Belanja (Simple)</title>
+</head>
+<body bgcolor="olive">
+
+  <!-- TABEL UTAMA -->
+  <table border="1" width="800" align="center" cellspacing="0" cellpadding="8" bgcolor="white">
+    
+    <!-- BARIS 1: BANNER GAMBAR -->
+    <tr>
+      <td colspan="5" align="center">
+        <img src="images/banner_mobil.jpg" width="780" height="200" alt="Banner Mobil">
+        <h2>KERANJANG PEMESANAN MOBIL</h2>
+      </td>
+    </tr>
+
+    <!-- BARIS 2: MENU NAVIGASI (KERANJANG AKTIF) -->
+    <tr align="center" bgcolor="#dddddd">
+      <td width="20%">
+        <a href="tugas.html">Home</a>
+      </td>
+      <td width="20%">
+        <a href="produk.html">Produk</a>
+      </td>
+      <td width="20%">
+        <a href="galeri.html">Galeri</a>
+      </td>
+      <td width="20%">
+        <b>[ <a href="keranjang.html">Keranjang</a> ]</b>
+      </td>
+      <td width="20%">
+        <a href="hubkami.html">Hub kami</a>
+      </td>
+    </tr>
+
+    <!-- BARIS 3: KONTEN TABEL KERANJANG PEMESANAN -->
+    <tr>
+      <td colspan="5">
+        
+        <table border="1" width="100%" cellspacing="0" cellpadding="6">
+          <tr align="center" bgcolor="#eeeeee">
+            <th width="5%">No</th>
+            <th width="15%">Foto Unit</th>
+            <th width="35%">Nama Mobil</th>
+            <th width="15%">Booking Fee</th>
+            <th width="10%">Unit</th>
+            <th width="20%">Subtotal</th>
+          </tr>
+
+          <!-- Item 1 -->
+          <tr align="center">
+            <td>1</td>
+            <td>
+              <img src="images/mobil1.jpg" width="80" height="50" alt="Tesla" border="1">
+            </td>
+            <td align="left">
+              <b>Tesla Model 3 Long Range EV</b><br>
+              <small>OTR: Rp 1.150.000.000</small>
+            </td>
+            <td align="right">Rp 25.000.000</td>
+            <td>1</td>
+            <td align="right"><b>Rp 25.000.000</b></td>
+          </tr>
+
+          <!-- Item 2 -->
+          <tr align="center">
+            <td>2</td>
+            <td>
+              <img src="images/mobil2.jpg" width="80" height="50" alt="Corvette" border="1">
+            </td>
+            <td align="left">
+              <b>Corvette Stingray C8 Supercar</b><br>
+              <small>OTR: Rp 2.850.000.000</small>
+            </td>
+            <td align="right">Rp 50.000.000</td>
+            <td>1</td>
+            <td align="right"><b>Rp 50.000.000</b></td>
+          </tr>
+
+          <!-- Item 3 -->
+          <tr align="center">
+            <td>3</td>
+            <td>
+              <img src="images/mobil6.jpg" width="80" height="50" alt="Mustang" border="1">
+            </td>
+            <td align="left">
+              <b>Ford Mustang GT 5.0 Fastback</b><br>
+              <small>OTR: Rp 1.680.000.000</small>
+            </td>
+            <td align="right">Rp 30.000.000</td>
+            <td>1</td>
+            <td align="right"><b>Rp 30.000.000</b></td>
+          </tr>
+
+          <!-- Baris Total -->
+          <tr bgcolor="#f0f0f0">
+            <td colspan="5" align="right"><b>Total Biaya Booking Fee:</b></td>
+            <td align="right"><b>Rp 105.000.000</b></td>
+          </tr>
+          <tr bgcolor="#f0f0f0">
+            <td colspan="5" align="right"><b>Potongan Diskon Event:</b></td>
+            <td align="right"><font color="red">- Rp 15.000.000</font></td>
+          </tr>
+          <tr bgcolor="#dddddd">
+            <td colspan="5" align="right"><b>TOTAL AKHIR PEMBAYARAN:</b></td>
+            <td align="right"><b><font size="3" color="blue">Rp 90.000.000</font></b></td>
+          </tr>
+
+          <!-- Tombol Aksi -->
+          <tr>
+            <td colspan="6" align="right">
+              <a href="produk.html">[ &larr; Lihat Mobil Lainnya ]</a>
+              &nbsp;&nbsp;
+              <button onclick="alert('Pesanan unit mobil berhasil dicatat!')">Checkout Pemesanan</button>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- BARIS 4: FOOTER -->
+    <tr align="center" bgcolor="#cccccc">
+      <td colspan="5">
+        <small>&copy; 2026 Praktikum Desain Web &mdash; Halaman Keranjang Tanpa CSS</small>
+      </td>
+    </tr>
+
+  </table>
+
+</body>
+</html>

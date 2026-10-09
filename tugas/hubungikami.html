@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tugas Web - Hubungi Kami (Simple)</title>
+</head>
+<body bgcolor="olive">
+
+  <!-- TABEL UTAMA -->
+  <table border="1" width="800" align="center" cellspacing="0" cellpadding="8" bgcolor="white">
+    
+    <!-- BARIS 1: BANNER GAMBAR -->
+    <tr>
+      <td colspan="5" align="center">
+        <img src="images/banner_mobil.jpg" width="780" height="200" alt="Banner Mobil">
+        <h2>HUBUNGI DEALER &amp; TEST DRIVE</h2>
+      </td>
+    </tr>
+
+    <!-- BARIS 2: MENU NAVIGASI (HUB KAMI AKTIF) -->
+    <tr align="center" bgcolor="#dddddd">
+      <td width="20%">
+        <a href="tugas.html">Home</a>
+      </td>
+      <td width="20%">
+        <a href="produk.html">Produk</a>
+      </td>
+      <td width="20%">
+        <a href="galeri.html">Galeri</a>
+      </td>
+      <td width="20%">
+        <a href="keranjang.html">Keranjang</a>
+      </td>
+      <td width="20%">
+        <b>[ <a href="hubkami.html">Hub kami</a> ]</b>
+      </td>
+    </tr>
+
+    <!-- BARIS 3: KONTEN HUBUNGI KAMI & FORMULIR -->
+    <tr>
+      <td colspan="5">
+        
+        <table border="1" width="100%" cellspacing="8" cellpadding="8">
+          <tr>
+            <!-- Kolom Kiri: Info Showroom -->
+            <td width="40%" valign="top">
+              <h3>Showroom Pusat</h3>
+              <center>
+                <img src="images/mobil5.jpg" width="220" height="150" alt="Ferrari 488 GTB Showroom" border="1"><br>
+                <small>Unit Ferrari 488 GTB di Showroom</small>
+              </center>
+              <br>
+              <b>Alamat Dealer:</b><br>
+              Jl. Boulevard Otomotif No. 88<br>
+              Jakarta Selatan 12930<br><br>
+              
+              <b>Kontak WhatsApp / Telp:</b><br>
+              0811-9876-5432 / (021) 8900-1234<br><br>
+
+              <b>Jam Buka:</b><br>
+              Senin - Sabtu: 08.30 - 18.00 WIB<br>
+              Minggu: 10.00 - 16.00 WIB
+            </td>
+
+            <!-- Kolom Kanan: Form Booking Test Drive -->
+            <td width="60%" valign="top">
+              <h3>Formulir Booking Test Drive</h3>
+              <form action="#" method="post">
+                <table border="0" width="100%" cellpadding="6">
+                  <tr>
+                    <td width="35%"><b>Nama Lengkap:</b></td>
+                    <td><input type="text" name="nama" size="30" required></td>
+                  </tr>
+                  <tr>
+                    <td><b>Nomor WhatsApp:</b></td>
+                    <td><input type="text" name="telepon" size="30" required></td>
+                  </tr>
+                  <tr>
+                    <td><b>Pilihan Mobil:</b></td>
+                    <td>
+                      <select name="mobil">
+                        <option>Tesla Model 3 Long Range EV</option>
+                        <option>Corvette Stingray C8 Supercar</option>
+                        <option>Jeep Wrangler Rubicon 4x4</option>
+                        <option>Audi RS5 Sport Coupe</option>
+                        <option>Ferrari 488 GTB Supercar</option>
+                        <option>Ford Mustang GT 5.0 Fastback</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><b>Jadwal Tanggal:</b></td>
+                    <td><input type="date" name="tanggal"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top"><b>Catatan:</b></td>
+                    <td><textarea name="pesan" rows="4" cols="28"></textarea></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <input type="submit" value="Kirim Pendaftaran" onclick="alert('Pendaftaran Test Drive Berhasil Dikirim!'); return false;">
+                      <input type="reset" value="Reset">
+                    </td>
+                  </tr>
+                </table>
+              </form>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- BARIS 4: FOOTER -->
+    <tr align="center" bgcolor="#cccccc">
+      <td colspan="5">
+        <small>&copy; 2026 Praktikum Desain Web &mdash; Halaman Kontak Tanpa CSS</small>
+      </td>
+    </tr>
+
+  </table>
+
+</body>
+</html>

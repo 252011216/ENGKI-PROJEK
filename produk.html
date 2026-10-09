@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Praktikum Web - Katalog Mobil</title>
+</head>
+<body style="margin: 0; padding: 30px 15px; background-color: #556b2f; font-family: 'Segoe UI', Arial, Helvetica, sans-serif; color: #2d3748;">
+
+  <!-- TABEL UTAMA -->
+  <table border="1" cellpadding="0" cellspacing="0" align="center" style="width: 880px; max-width: 95%; background-color: #ffffff; border: 2px solid #2d3748; border-collapse: collapse; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35); border-radius: 6px; overflow: hidden;">
+    
+    <!-- 1. HEADER BANNER GAMBAR MOBIL -->
+    <tr>
+      <td colspan="5" style="padding: 12px; background-color: #f7fafc; border-bottom: 2px solid #2d3748; text-align: center;">
+        <div style="position: relative; width: 100%; height: 220px; overflow: hidden; border-radius: 4px; border: 1.5px solid #2d3748;">
+          <img src="images/banner_mobil.jpg" alt="Banner Katalog Mobil" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); padding: 18px 20px; text-align: left;">
+            <span style="background-color: #2b6cb0; color: #ffffff; padding: 3px 8px; border-radius: 3px; font-size: 11px; font-weight: bold; letter-spacing: 1px;">SHOWROOM UNIT READY</span>
+            <h2 style="margin: 4px 0 0 0; color: #ffffff; font-size: 22px; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">DAFTAR KOLEKSI &amp; HARGA MOBIL PILIHAN</h2>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 2. BARIS MENU NAVIGASI (PRODUK AKTIF) -->
+    <tr style="background-color: #edf2f7;">
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-right: 1px solid #cbd5e0; border-bottom: 2px solid #2d3748;">
+        <a href="tugas.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #2d3748; background-color: #ffffff; font-weight: bold; font-size: 14px; border: 1.5px solid #a0aec0; border-radius: 5px;">
+          Home
+        </a>
+      </td>
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-right: 1px solid #cbd5e0; border-bottom: 2px solid #2d3748;">
+        <a href="produk.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #ffffff; background-color: #2b6cb0; font-weight: bold; font-size: 14px; border: 1.5px solid #1a365d; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+          Produk
+        </a>
+      </td>
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-right: 1px solid #cbd5e0; border-bottom: 2px solid #2d3748;">
+        <a href="galeri.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #2d3748; background-color: #ffffff; font-weight: bold; font-size: 14px; border: 1.5px solid #a0aec0; border-radius: 5px;">
+          Galeri
+        </a>
+      </td>
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-right: 1px solid #cbd5e0; border-bottom: 2px solid #2d3748;">
+        <a href="keranjang.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #2d3748; background-color: #ffffff; font-weight: bold; font-size: 14px; border: 1.5px solid #a0aec0; border-radius: 5px;">
+          Keranjang
+        </a>
+      </td>
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-bottom: 2px solid #2d3748;">
+        <a href="hubkami.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #2d3748; background-color: #ffffff; font-weight: bold; font-size: 14px; border: 1.5px solid #a0aec0; border-radius: 5px;">
+          Hub kami
+        </a>
+      </td>
+    </tr>
+
+    <!-- 3. KONTEN UTAMA: DAFTAR PRODUK MOBIL (GRID TABEL) -->
+    <tr>
+      <td colspan="5" style="padding: 24px; background-color: #f7fafc;">
+        
+        <table border="1" cellpadding="0" cellspacing="0" style="width: 100%; border: 2px solid #4a5568; border-collapse: separate; border-spacing: 16px; background-color: #ffffff; border-radius: 6px;">
+          
+          <!-- Baris 1: Mobil 1, Mobil 2, Mobil 3 -->
+          <tr>
+            <!-- Mobil 1 -->
+            <td style="width: 33.33%; vertical-align: top; padding: 14px; border: 1.5px solid #cbd5e0; border-radius: 6px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil1.jpg" alt="Tesla Model 3 EV" style="width: 100%; height: 145px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #cbd5e0;">
+              <h4 style="margin: 12px 0 4px 0; font-size: 15px; color: #2d3748;">Tesla Model 3 EV</h4>
+              <div style="font-size: 14px; font-weight: bold; color: #2b6cb0; margin-bottom: 8px;">Rp 1.150.000.000</div>
+              <p style="font-size: 12px; color: #718096; line-height: 1.4; margin: 0 0 12px 0;">Mobil listrik premium 0-100 km/j dalam 3.3 detik, jarak tempuh 500 km per charge.</p>
+              <a href="keranjang.html" style="display: inline-block; padding: 7px 14px; background-color: #3182ce; color: #ffffff; text-decoration: none; font-size: 12.5px; font-weight: bold; border-radius: 4px; border: 1px solid #2b6cb0;">+ Pesan Unit</a>
+            </td>
+
+            <!-- Mobil 2 -->
+            <td style="width: 33.33%; vertical-align: top; padding: 14px; border: 1.5px solid #cbd5e0; border-radius: 6px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil2.jpg" alt="Corvette Stingray C8" style="width: 100%; height: 145px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #cbd5e0;">
+              <h4 style="margin: 12px 0 4px 0; font-size: 15px; color: #2d3748;">Corvette Stingray C8</h4>
+              <div style="font-size: 14px; font-weight: bold; color: #c53030; margin-bottom: 8px;">Rp 2.850.000.000</div>
+              <p style="font-size: 12px; color: #718096; line-height: 1.4; margin: 0 0 12px 0;">Mesin 6.2L LT2 V8 Mid-Engine bertenaga 495 HP dengan transmisi 8-Speed Dual-Clutch.</p>
+              <a href="keranjang.html" style="display: inline-block; padding: 7px 14px; background-color: #3182ce; color: #ffffff; text-decoration: none; font-size: 12.5px; font-weight: bold; border-radius: 4px; border: 1px solid #2b6cb0;">+ Pesan Unit</a>
+            </td>
+
+            <!-- Mobil 3 -->
+            <td style="width: 33.33%; vertical-align: top; padding: 14px; border: 1.5px solid #cbd5e0; border-radius: 6px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil3.jpg" alt="Jeep Wrangler Rubicon" style="width: 100%; height: 145px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #cbd5e0;">
+              <h4 style="margin: 12px 0 4px 0; font-size: 15px; color: #2d3748;">Jeep Rubicon 4x4</h4>
+              <div style="font-size: 14px; font-weight: bold; color: #2b6cb0; margin-bottom: 8px;">Rp 1.750.000.000</div>
+              <p style="font-size: 12px; color: #718096; line-height: 1.4; margin: 0 0 12px 0;">SUV legendaris sistem penggerak 4WD Rock-Trac, suspensi kokoh, dan atap modular.</p>
+              <a href="keranjang.html" style="display: inline-block; padding: 7px 14px; background-color: #3182ce; color: #ffffff; text-decoration: none; font-size: 12.5px; font-weight: bold; border-radius: 4px; border: 1px solid #2b6cb0;">+ Pesan Unit</a>
+            </td>
+          </tr>
+
+          <!-- Baris 2: Mobil 4, Mobil 5, Mobil 6 -->
+          <tr>
+            <!-- Mobil 4 -->
+            <td style="width: 33.33%; vertical-align: top; padding: 14px; border: 1.5px solid #cbd5e0; border-radius: 6px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil4.jpg" alt="Audi RS5 Sport Coupe" style="width: 100%; height: 145px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #cbd5e0;">
+              <h4 style="margin: 12px 0 4px 0; font-size: 15px; color: #2d3748;">Audi RS5 Coupe</h4>
+              <div style="font-size: 14px; font-weight: bold; color: #2b6cb0; margin-bottom: 8px;">Rp 2.100.000.000</div>
+              <p style="font-size: 12px; color: #718096; line-height: 1.4; margin: 0 0 12px 0;">2.9L Twin-Turbo V6 Quattro All-Wheel Drive, kabin balap mewah dengan jok kulit Nappa.</p>
+              <a href="keranjang.html" style="display: inline-block; padding: 7px 14px; background-color: #3182ce; color: #ffffff; text-decoration: none; font-size: 12.5px; font-weight: bold; border-radius: 4px; border: 1px solid #2b6cb0;">+ Pesan Unit</a>
+            </td>
+
+            <!-- Mobil 5 -->
+            <td style="width: 33.33%; vertical-align: top; padding: 14px; border: 1.5px solid #cbd5e0; border-radius: 6px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil5.jpg" alt="Ferrari 488 GTB Supercar" style="width: 100%; height: 145px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #cbd5e0;">
+              <h4 style="margin: 12px 0 4px 0; font-size: 15px; color: #2d3748;">Ferrari 488 GTB</h4>
+              <div style="font-size: 14px; font-weight: bold; color: #c53030; margin-bottom: 8px;">Rp 5.950.000.000</div>
+              <p style="font-size: 12px; color: #718096; line-height: 1.4; margin: 0 0 12px 0;">Supercar Italia bermesin 3.9L Twin-Turbo V8 bertenaga 661 HP dengan kecepatan 330 km/j.</p>
+              <a href="keranjang.html" style="display: inline-block; padding: 7px 14px; background-color: #3182ce; color: #ffffff; text-decoration: none; font-size: 12.5px; font-weight: bold; border-radius: 4px; border: 1px solid #2b6cb0;">+ Pesan Unit</a>
+            </td>
+
+            <!-- Mobil 6 -->
+            <td style="width: 33.33%; vertical-align: top; padding: 14px; border: 1.5px solid #cbd5e0; border-radius: 6px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil6.jpg" alt="Ford Mustang GT 5.0" style="width: 100%; height: 145px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #cbd5e0;">
+              <h4 style="margin: 12px 0 4px 0; font-size: 15px; color: #2d3748;">Ford Mustang GT 5.0</h4>
+              <div style="font-size: 14px; font-weight: bold; color: #2b6cb0; margin-bottom: 8px;">Rp 1.680.000.000</div>
+              <p style="font-size: 12px; color: #718096; line-height: 1.4; margin: 0 0 12px 0;">American muscle car dengan mesin 5.0L Coyote V8 legendaris bertenaga 450 HP dan knalpot merdu.</p>
+              <a href="keranjang.html" style="display: inline-block; padding: 7px 14px; background-color: #3182ce; color: #ffffff; text-decoration: none; font-size: 12.5px; font-weight: bold; border-radius: 4px; border: 1px solid #2b6cb0;">+ Pesan Unit</a>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- 4. FOOTER -->
+    <tr>
+      <td colspan="5" style="padding: 12px; background-color: #2d3748; color: #e2e8f0; text-align: center; font-size: 12.5px; border-top: 2px solid #1a202c;">
+        &copy; 2026 Praktikum Desain Web &mdash; Halaman Katalog Produk Mobil
+      </td>
+    </tr>
+
+  </table>
+
+</body>
+</html>

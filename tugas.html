@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Praktikum Web - Showroom Mobil</title>
+</head>
+<body style="margin: 0; padding: 30px 15px; background-color: #556b2f; font-family: 'Segoe UI', Arial, Helvetica, sans-serif; color: #2d3748;">
+
+  <!-- ========================================================
+       TABEL UTAMA (CONTAINER BESAR SESUAI DESAIN PAPAN TULIS)
+       ======================================================== -->
+  <table border="1" cellpadding="0" cellspacing="0" align="center" style="width: 880px; max-width: 95%; background-color: #ffffff; border: 2px solid #2d3748; border-collapse: collapse; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35); border-radius: 6px; overflow: hidden;">
+    
+    <!-- 1. BARIS HEADER / BANNER GAMBAR MOBIL UTAMA -->
+    <tr>
+      <td colspan="5" style="padding: 12px; background-color: #f7fafc; border-bottom: 2px solid #2d3748; text-align: center;">
+        <div style="position: relative; width: 100%; height: 220px; overflow: hidden; border-radius: 4px; border: 1.5px solid #2d3748;">
+          <img src="images/banner_mobil.jpg" alt="Banner Showroom Mobil" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); padding: 18px 20px; text-align: left;">
+            <span style="background-color: #e53e3e; color: #ffffff; padding: 3px 8px; border-radius: 3px; font-size: 11px; font-weight: bold; letter-spacing: 1px;">SHOWROOM RESMI</span>
+            <h2 style="margin: 4px 0 0 0; color: #ffffff; font-size: 22px; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">PUSAT MOBIL SPORT &amp; KELUARGA TERLENGKAP</h2>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- 2. BARIS MENU NAVIGASI (5 TOMBOL SESUAI WIREFRAME) -->
+    <tr style="background-color: #edf2f7;">
+      <!-- Menu 1: Home (Aktif) -->
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-right: 1px solid #cbd5e0; border-bottom: 2px solid #2d3748;">
+        <a href="tugas.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #ffffff; background-color: #2b6cb0; font-weight: bold; font-size: 14px; border: 1.5px solid #1a365d; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+          Home
+        </a>
+      </td>
+
+      <!-- Menu 2: Produk -->
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-right: 1px solid #cbd5e0; border-bottom: 2px solid #2d3748;">
+        <a href="produk.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #2d3748; background-color: #ffffff; font-weight: bold; font-size: 14px; border: 1.5px solid #a0aec0; border-radius: 5px;">
+          Produk
+        </a>
+      </td>
+
+      <!-- Menu 3: Galeri -->
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-right: 1px solid #cbd5e0; border-bottom: 2px solid #2d3748;">
+        <a href="galeri.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #2d3748; background-color: #ffffff; font-weight: bold; font-size: 14px; border: 1.5px solid #a0aec0; border-radius: 5px;">
+          Galeri
+        </a>
+      </td>
+
+      <!-- Menu 4: Keranjang -->
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-right: 1px solid #cbd5e0; border-bottom: 2px solid #2d3748;">
+        <a href="keranjang.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #2d3748; background-color: #ffffff; font-weight: bold; font-size: 14px; border: 1.5px solid #a0aec0; border-radius: 5px;">
+          Keranjang
+        </a>
+      </td>
+
+      <!-- Menu 5: Hub Kami -->
+      <td style="width: 20%; padding: 10px 8px; text-align: center; border-bottom: 2px solid #2d3748;">
+        <a href="hubkami.html" style="display: block; padding: 10px 4px; text-decoration: none; color: #2d3748; background-color: #ffffff; font-weight: bold; font-size: 14px; border: 1.5px solid #a0aec0; border-radius: 5px;">
+          Hub kami
+        </a>
+      </td>
+    </tr>
+
+    <!-- 3. BARIS KONTEN UTAMA (KOTAK KONTEN SESUAI WIREFRAME) -->
+    <tr>
+      <td colspan="5" style="padding: 24px; background-color: #f7fafc;">
+        
+        <!-- Tabel Bingkai Konten Dalam -->
+        <table border="1" cellpadding="0" cellspacing="0" style="width: 100%; border: 2px solid #4a5568; border-collapse: separate; border-spacing: 18px; background-color: #ffffff; border-radius: 6px;">
+          
+          <!-- SUB-BARIS 1 KONTEN: [GAMBAR MOBIL 1] - [TEKS PARAGRAF] - [GAMBAR MOBIL 2] -->
+          <tr>
+            <!-- Gambar Mobil 1 (Kiri Atas) -->
+            <td style="width: 28%; vertical-align: top; padding: 10px; border: 1.5px solid #cbd5e0; border-radius: 5px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil1.jpg" alt="Mobil Listrik Sedan" style="width: 100%; height: 160px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #a0aec0;">
+              <div style="margin-top: 8px; font-size: 13px; font-weight: bold; color: #2b6cb0;">Mobil Listrik Sedan EV</div>
+              <div style="font-size: 11px; color: #718096;">Efisiensi Tinggi &amp; Ramah Lingkungan</div>
+            </td>
+
+            <!-- Teks Tengah (Garis-Garis Tulisan) -->
+            <td style="width: 44%; vertical-align: top; padding: 14px 18px; border: 1.5px solid #cbd5e0; border-radius: 5px; background-color: #ffffff;">
+              <h3 style="margin-top: 0; margin-bottom: 10px; color: #2d3748; font-size: 16px; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">
+                Showroom Otomotif Premium &amp; Terpercaya
+              </h3>
+              <p style="margin: 0 0 10px 0; font-size: 13.5px; line-height: 1.6; color: #4a5568; text-align: justify;">
+                Selamat datang di dealer dan showroom otomotif resmi. Kami menyediakan koleksi unit mobil terlengkap, mulai dari mobil listrik masa depan (EV), supercar performa tinggi, hingga SUV tangguh untuk keluarga.
+              </p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #4a5568; text-align: justify;">
+                Seluruh unit mobil melalui inspeksi ketat 160 titik, bergaransi mesin resmi pabrikan, serta didukung fasilitas bengkel resmi dan suku cadang orisinal.
+              </p>
+            </td>
+
+            <!-- Gambar Mobil 2 (Kanan Atas) -->
+            <td style="width: 28%; vertical-align: top; padding: 10px; border: 1.5px solid #cbd5e0; border-radius: 5px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil2.jpg" alt="Supercar Sport Merah" style="width: 100%; height: 160px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #a0aec0;">
+              <div style="margin-top: 8px; font-size: 13px; font-weight: bold; color: #c53030;">Supercar Sport Edition</div>
+              <div style="font-size: 11px; color: #718096;">Mesin V8 Twin Turbo 700 HP</div>
+            </td>
+          </tr>
+
+          <!-- SUB-BARIS 2 KONTEN: [GAMBAR MOBIL 3 SEDANG] - [GAMBAR MOBIL 4 PORTRAIT] - [TEKS PARAGRAF] -->
+          <tr>
+            <!-- Gambar Mobil 3 (Kiri Bawah - Sedang) -->
+            <td style="width: 32%; vertical-align: top; padding: 10px; border: 1.5px solid #cbd5e0; border-radius: 5px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil3.jpg" alt="SUV Offroad Tangguh" style="width: 100%; height: 175px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #a0aec0;">
+              <div style="margin-top: 8px; font-size: 13px; font-weight: bold; color: #2d3748;">SUV Adventure 4x4</div>
+              <div style="font-size: 11px; color: #718096;">Kenyamanan Maksimal di Segala Medan</div>
+            </td>
+
+            <!-- Gambar Mobil 4 (Tengah Bawah - Portrait) -->
+            <td style="width: 26%; vertical-align: top; padding: 10px; border: 1.5px solid #cbd5e0; border-radius: 5px; background-color: #f8fafc; text-align: center;">
+              <img src="images/mobil4.jpg" alt="Coupe Luxury GT" style="width: 100%; height: 175px; object-fit: cover; display: block; border-radius: 4px; border: 1px solid #a0aec0;">
+              <div style="margin-top: 8px; font-size: 13px; font-weight: bold; color: #2d3748;">Coupe Luxury GT</div>
+              <div style="font-size: 11px; color: #718096;">Desain Aerodinamis Modern</div>
+            </td>
+
+            <!-- Teks Kanan Bawah (Garis-Garis Tulisan) -->
+            <td style="width: 42%; vertical-align: top; padding: 14px 18px; border: 1.5px solid #cbd5e0; border-radius: 5px; background-color: #ffffff;">
+              <h3 style="margin-top: 0; margin-bottom: 10px; color: #2d3748; font-size: 16px; border-bottom: 2px solid #e2e8f0; padding-bottom: 6px;">
+                Fasilitas &amp; Program Kredit Ringan
+              </h3>
+              <p style="margin: 0 0 10px 0; font-size: 13.5px; line-height: 1.6; color: #4a5568; text-align: justify;">
+                Nikmati kemudahan kepemilikan mobil impian dengan program DP mulai 15%, bunga 0% hingga 1 tahun, serta gratis asuransi All-Risk selama masa tenor kredit.
+              </p>
+              <p style="margin: 0; font-size: 13.5px; line-height: 1.6; color: #4a5568; text-align: justify;">
+                Hubungi konsultan sales kami untuk jadwal <strong>Test Drive gratis</strong> langsung diantar ke rumah atau kantor Anda sekarang juga.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+
+    <!-- 4. FOOTER INFORMASI -->
+    <tr>
+      <td colspan="5" style="padding: 12px; background-color: #2d3748; color: #e2e8f0; text-align: center; font-size: 12.5px; border-top: 2px solid #1a202c;">
+        &copy; 2026 Praktikum Desain Web &mdash; Showroom Mobil &amp; Layanan Otomotif
+      </td>
+    </tr>
+
+  </table>
+
+</body>
+</html>
