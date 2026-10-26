@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh Desain CSS Sederhana</title>
+  <!-- Menghubungkan file CSS eksternal CSS2.css -->
+  <link rel="stylesheet" href="CSS2.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Navigasi -->
+    <header class="navbar">
+      <a href="#" class="logo">MyWebsite</a>
+      <ul class="nav-links">
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Tentang</a></li>
+        <li><a href="#">Kontak</a></li>
+      </ul>
+    </header>
+
+    <!-- Kartu Sambutan (Hero Card) -->
+    <section class="card">
+      <h2>Selamat Datang di Website Saya</h2>
+      <p>
+        Ini adalah contoh halaman web sederhana dengan styling CSS yang rapi, ringan, dan modern. 
+        Desain ini dibuat menggunakan tata letak Flexbox dan Grid yang responsif di HP maupun komputer.
+      </p>
+      <div>
+        <a href="#kontak" class="btn btn-primary">Hubungi Kami</a>
+        <a href="#fitur" class="btn btn-secondary">Pelajari Selengkapnya</a>
+      </div>
+    </section>
+
+    <!-- Grid 2 Kolom -->
+    <div class="grid-2" id="fitur">
+      <div class="card">
+        <h2>🚀 Cepat &amp; Ringan</h2>
+        <p>CSS yang sederhana membuat website memuat lebih cepat tanpa beban script yang berat.</p>
+        <a href="#" class="btn btn-secondary">Detail</a>
+      </div>
+
+      <div class="card">
+        <h2>📱 Desain Responsif</h2>
+        <p>Tampilan otomatis menyesuaikan ukuran layar komputer tablet, maupun ponsel pintar.</p>
+        <a href="#" class="btn btn-secondary">Detail</a>
+      </div>
+    </div>
+
+    <!-- Formulir Sederhana -->
+    <section class="card" id="kontak">
+      <h2>Kirim Pesan</h2>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" placeholder="Masukkan nama Anda..." required>
+        </div>
+        <div class="form-group">
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" rows="4" placeholder="Tuliskan pesan Anda di sini..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 MyWebsite. Dibuat dengan HTML &amp; CSS Sederhana.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
