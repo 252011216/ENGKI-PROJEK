@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+    crossorigin="anonymous"></script>
+
+<section id="menu">
+    <nav class="navbar md:navbar-expand bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="btn-icon navbar-toggler" type="button" data-bs-toggle="drawer" data-bs-target="#navbarDrawer"
+                aria-controls="navbarDrawer" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            </button>
+            <dialog class="drawer drawer-end" tabindex="-1" id="navbarDrawer" aria-labelledby="navbarDrawerLabel">
+                <div class="drawer-header">
+                    <h5 class="drawer-title" id="navbarDrawerLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+                </div>
+                <div class="drawer-body mb-2 md:mb-0">
+                    <ul class="nav navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" type="button" data-bs-toggle="menu" aria-expanded="false">
+                                Menu
+                            </button>
+                            <div class="menu" style="background-color: green;">
+                                <a class="menu-item" href="pria,html">Pria</a>
+                                <a class="menu-item" href="wanita.html">wanita</a>
+                                <hr class="menu-divider">
+                                <a class="menu-item" href="orang tua.html">Orang Tua</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" herf="daftar.html">pendaftaran</a>
+                        </li>
+                    </ul>
+                    <form class="w-50 hstack gap-2" role="search">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn-solid btn-icon theme-secondary" type="submit">
+                            <svg class="bi" width="16" height="16">
+                                <use href="#search" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </dialog>
+        </div>
+    </nav>
+</section>
+<section id="slider">
+    <div id="carouselExample" class="carousel carousel-overlay slide"data-bs-autoplay="true">
+  <div class="carousel-inner rounded-5">
+    <div class="carousel-item active"data-bs-interval="2000">
+      <img src="images/mobil1.jpg" class="d-block w-100" alt="gambar 1">
+    </div>
+    <div class="carousel-item"data-bs-interval="2000">
+      <img src="images/mobil2.jpg" class="d-block w-100" alt="gambar 2">
+    </div>
+    <div class="carousel-item"data-bs-interval="2000">
+      <img src="images/mobil3.jpg" class="d-block w-100" alt="gambar 3">
+    </div>
+  </div>
+  <div class="carousel-overlay-controls">
+    <div>
+      <button class="btn-icon btn-sm btn-subtle theme-secondary" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-icon-prev" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="btn-icon btn-sm btn-subtle theme-secondary" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-icon-next" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+  </div>
+</div>
+</section>
+<section id="galeri">
+
+</section>
+<section id="lokasi">
+</section>
+<section id="footer">
+</section>
+</body>
+
+</html>
