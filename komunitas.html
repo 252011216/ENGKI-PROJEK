@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Forum Komunitas AutoNova Club Indonesia - Ruang Diskusi Penggemar Otomotif, Tips Perawatan Mobil Listrik, Panduan Modifikasi, dan Tanya Montir Resmi.">
+  <meta name="keywords" content="komunitas mobil, forum otomotif indonesia, tips mobil listrik, modifikasi jeep rubicon, tanya montir mobil, autonova club">
+  <meta name="author" content="AutoNova Nusantara">
+  <title>Forum & Komunitas Otomotif | AutoNova Nusantara</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons & FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. TOPBAR INFORMASI SHOWROOM
+       ========================================================================== -->
+  <div class="topbar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-4">
+        <span><i class="bi bi-geo-alt-fill text-danger me-1"></i> Sekretariat Komunitas: Gedung AutoNova, Lt. 2, Jakarta Selatan</span>
+        <span><i class="bi bi-people-fill text-info me-1"></i> 12.800+ Anggota Terverifikasi Se-Indonesia</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="bi bi-whatsapp text-success me-1"></i> Grup Komunitas: <strong>AutoNova Club ID</strong></span>
+        <span class="text-secondary">|</span>
+        <a href="utama.html" class="badge bg-primary text-white text-decoration-none px-2 py-1"><i class="bi bi-stars me-1"></i>Portal Terpadu (utama.html)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. NAVBAR UTAMA (NAV MENU RESPONSIF)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-autonova sticky-top">
+    <div class="container">
+      
+      <!-- Brand Logo -->
+      <a class="navbar-brand-logo" href="index.html">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-car-side"></i>
+        </div>
+        <div>
+          <span>AutoNova</span>
+          <span class="brand-badge ms-1">Nusantara</span>
+        </div>
+      </a>
+
+      <!-- Tombol Aksi Mobile (Keranjang & Hamburger) -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="btn btn-light position-relative p-2 border open-cart-modal-btn" aria-label="Keranjang Pemesanan">
+          <i class="bi bi-cart3 fs-5 text-dark"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge" style="display:none;">0</span>
+        </button>
+        <button class="navbar-toggler border-0 p-2 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Buka navigasi">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Menu Navigasi Desktop & Mobile Collapse -->
+      <div class="collapse navbar-collapse" id="navbarMainContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="index.html">
+              <i class="bi bi-house-door-fill me-1"></i> Beranda & Profil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="produk.html">
+              <i class="bi bi-grid-fill me-1"></i> Katalog Penjualan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="promosi.html">
+              <i class="bi bi-tag-fill me-1 text-danger"></i> Promo & Diskon
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" aria-current="page" href="komunitas.html">
+              <i class="bi bi-chat-square-text-fill me-1 text-info"></i> Forum Komunitas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="transaksi.html">
+              <i class="bi bi-receipt-cutoff me-1 text-success"></i> Form Pemesanan
+            </a>
+          </li>
+        </ul>
+
+        <!-- Action Items Sebelah Kanan (Desktop) -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <button class="btn btn-outline-secondary position-relative px-3 py-2 open-cart-modal-btn" title="Lihat Keranjang Pemesanan">
+            <i class="bi bi-cart3 me-1"></i>
+            <span class="fw-semibold">Keranjang</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge" style="display:none;">0</span>
+          </button>
+          <a href="#form-tambah-topik" class="btn btn-an-accent d-flex align-items-center gap-2">
+            <i class="bi bi-pencil-square"></i>
+            <span>Tulis Diskusi Baru</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       3. BREADCRUMB & HEADER KOMUNITAS
+       ========================================================================== -->
+  <div class="bg-white border-bottom py-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Beranda</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Forum & Komunitas AutoNova Club</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <section class="py-5 text-white" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0369a1 100%);">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <span class="badge bg-info text-dark fw-bold px-3 py-2 mb-2 text-uppercase shadow-sm">
+            <i class="bi bi-people-fill me-1"></i> AutoNova Club Indonesia
+          </span>
+          <h1 class="display-5 fw-bold mb-3 text-white">Forum Diskusi Pemilik & Penggemar Otomotif</h1>
+          <p class="lead text-light mb-0" style="font-size: 1.1rem; max-width: 680px;">
+            Tempat berkumpulnya komunitas otomotif terakreditasi: diskusikan pengalaman berkendara harian, modifikasi performa, perawatan baterai mobil listrik, hingga konsultasi gratis bersama teknisi bersertifikasi.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="#form-tambah-topik" class="btn btn-warning btn-lg fw-bold text-dark px-4 shadow">
+            <i class="bi bi-plus-circle me-1"></i>Buat Topik Diskusi Baru
+          </a>
+        </div>
+      </div>
+
+      <!-- Statistik Komunitas Bar -->
+      <div class="row g-3 mt-4 pt-3 border-top border-light border-opacity-25 text-center">
+        <div class="col-6 col-md-3">
+          <h3 class="fw-bold text-warning mb-0">12.800+</h3>
+          <small class="text-light text-opacity-75">Anggota Resmi Terdaftar</small>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 class="fw-bold text-info mb-0">1.450+</h3>
+          <small class="text-light text-opacity-75">Topik Diskusi Aktif</small>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 class="fw-bold text-success mb-0">24 Kota</h3>
+          <small class="text-light text-opacity-75">Chapter Komunitas Daerah</small>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 class="fw-bold text-white mb-0">99.2%</h3>
+          <small class="text-light text-opacity-75">Pertanyaan Terjawab Cepat</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. FILTER KATEGORI FORUM & KONTEN DISKUSI
+       ========================================================================== -->
+  <section class="container my-5">
+    <div class="row g-4">
+      
+      <!-- Kolom Kiri: Daftar Thread Diskusi -->
+      <div class="col-lg-8">
+        
+        <!-- Filter Tabs Kategori Forum -->
+        <div class="d-flex flex-wrap gap-2 mb-4 border-bottom pb-3">
+          <a href="javascript:void(0)" class="btn btn-sm btn-outline-primary forum-filter-tab active" data-forum-category="all">
+            <i class="bi bi-collection me-1"></i>Semua Diskusi
+          </a>
+          <a href="javascript:void(0)" class="btn btn-sm btn-outline-primary forum-filter-tab" data-forum-category="tips">
+            <i class="bi bi-lightbulb me-1"></i>Tips & Perawatan
+          </a>
+          <a href="javascript:void(0)" class="btn btn-sm btn-outline-primary forum-filter-tab" data-forum-category="modifikasi">
+            <i class="bi bi-tools me-1"></i>Modifikasi & Tuning
+          </a>
+          <a href="javascript:void(0)" class="btn btn-sm btn-outline-primary forum-filter-tab" data-forum-category="tanya">
+            <i class="bi bi-question-circle me-1"></i>Tanya Montir / Solusi
+          </a>
+          <a href="javascript:void(0)" class="btn btn-sm btn-outline-primary forum-filter-tab" data-forum-category="meetup">
+            <i class="bi bi-calendar-event me-1"></i>Agenda Meetup
+          </a>
+        </div>
+
+        <!-- Wadah Thread Diskusi (Dinamis Diisi & Bisa Ditambahkan via Form) -->
+        <div id="forumThreadsContainer">
+          
+          <!-- Thread 1: Tips EV -->
+          <div class="forum-thread-card shadow-sm" data-category="tips">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; font-size: 1.1rem;">
+                  R
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Rian Kusuma <span class="badge bg-primary-subtle text-primary border border-primary ms-1">Pemilik Tesla Model 3</span></h6>
+                  <small class="text-muted"><i class="bi bi-clock me-1"></i>2 jam lalu &bull; Member Chapter Jakarta Selatan</small>
+                </div>
+              </div>
+              <span class="badge bg-primary-subtle text-primary px-3 py-2 fw-semibold">Tips & Perawatan</span>
+            </div>
+            <h5 class="fw-bold mb-2 text-dark">Panduan Efisiensi & Perawatan Baterai EV saat Suhu Panas Ekstrem</h5>
+            <p class="text-secondary small mb-3">
+              Halo teman-teman pemilik mobil listrik! Selama setahun memakai Tesla Model 3 di cuaca tropis Jakarta, saya menemukan beberapa kiat penting: selalu atur batas pengisian harian di 80%, hindari membiarkan baterai di bawah 10% dalam waktu lama saat terparkir di bawah terik matahari, dan aktifkan fitur kabin overheat protection agar baterai tetap terjaga suhunya.
+            </p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-outline-secondary border-0 text-muted d-flex align-items-center gap-1" onclick="likeThread(this)">
+                  <i class="bi bi-hand-thumbs-up"></i> <span class="like-count">34</span> Suka
+                </button>
+                <span class="text-muted small"><i class="bi bi-chat-dots me-1"></i>18 Balasan</span>
+              </div>
+              <a href="javascript:void(0)" onclick="alert('Thread diskusi terbuka! Fitur interaksi forum aktif.')" class="btn btn-sm btn-an-outline">Balas Diskusi</a>
+            </div>
+          </div>
+
+          <!-- Thread 2: Modifikasi Rubicon -->
+          <div class="forum-thread-card shadow-sm" data-category="modifikasi">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; font-size: 1.1rem;">
+                  D
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Dimas Setiawan <span class="badge bg-success-subtle text-success border border-success ms-1">Offroad Enthusiast</span></h6>
+                  <small class="text-muted"><i class="bi bi-clock me-1"></i>4 jam lalu &bull; Member Chapter Surabaya</small>
+                </div>
+              </div>
+              <span class="badge bg-warning-subtle text-warning-emphasis px-3 py-2 fw-semibold">Modifikasi & Tuning</span>
+            </div>
+            <h5 class="fw-bold mb-2 text-dark">Review Pemakaian Ban All-Terrain 35 Inci & Velg Beadlock pada Jeep Rubicon</h5>
+            <p class="text-secondary small mb-3">
+              Baru saja menyelesaikan modifikasi kaki-kaki Jeep Rubicon 4x4 dari AutoNova. Pemasangan ban ukuran 35x12.5 R17 dengan velg beadlock dan lift kit 2.5 inci Fox Racing. Hasilnya sangat stabil di jalan tol dan sangat tangguh saat diajak trabas bebatuan di Gunung Bromo minggu lalu tanpa kendala gesekan fender!
+            </p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-outline-secondary border-0 text-muted d-flex align-items-center gap-1" onclick="likeThread(this)">
+                  <i class="bi bi-hand-thumbs-up"></i> <span class="like-count">52</span> Suka
+                </button>
+                <span class="text-muted small"><i class="bi bi-chat-dots me-1"></i>27 Balasan</span>
+              </div>
+              <a href="javascript:void(0)" onclick="alert('Thread diskusi terbuka! Fitur interaksi forum aktif.')" class="btn btn-sm btn-an-outline">Balas Diskusi</a>
+            </div>
+          </div>
+
+          <!-- Thread 3: Tanya Montir -->
+          <div class="forum-thread-card shadow-sm" data-category="tanya">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; font-size: 1.1rem;">
+                  B
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold">Bambang Santoso <span class="badge bg-danger-subtle text-danger border border-danger ms-1">Master Teknisi AutoNova</span></h6>
+                  <small class="text-muted"><i class="bi bi-patch-check-fill text-primary me-1"></i>Resmi Showroom &bull; Kemarin</small>
+                </div>
+              </div>
+              <span class="badge bg-danger-subtle text-danger px-3 py-2 fw-semibold">Tanya Montir / Solusi</span>
+            </div>
+            <h5 class="fw-bold mb-2 text-dark">Konsultasi Teknis: Interval Penggantian Minyak Rem Dot 4 & Fluida Transmisi Sportscar</h5>
+            <p class="text-secondary small mb-3">
+              Banyak rekan komunitas bertanya seberapa sering mobil sport bermesin performa tinggi (Corvette C8 / Audi RS5 / Mustang GT) harus ganti fluida rem dan transmisi dual clutch. Standar kami: jika mobil sering dipacu di lintasan sirkuit atau kondisi stop-and-go perkotaan padat, ganti minyak rem setiap 20.000 KM atau 1 tahun untuk mencegah vapor lock.
+            </p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-outline-secondary border-0 text-muted d-flex align-items-center gap-1" onclick="likeThread(this)">
+                  <i class="bi bi-hand-thumbs-up"></i> <span class="like-count">89</span> Suka
+                </button>
+                <span class="text-muted small"><i class="bi bi-chat-dots me-1"></i>41 Balasan</span>
+              </div>
+              <a href="javascript:void(0)" onclick="alert('Thread diskusi terbuka! Fitur interaksi forum aktif.')" class="btn btn-sm btn-an-outline">Balas Diskusi</a>
+            </div>
+          </div>
+
+          <!-- Thread 4: Agenda Meetup -->
+          <div class="forum-thread-card shadow-sm" data-category="meetup">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div class="d-flex align-items-center gap-3">
+                <div class="bg-info text-dark rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; font-size: 1.1rem;">
+                  A
+                </div>
+                <div>
+                  <h6 class="mb-0 fw-bold">AutoNova Official Event <span class="badge bg-info-subtle text-info border border-info ms-1">Panitia Komunitas</span></h6>
+                  <small class="text-muted"><i class="bi bi-clock me-1"></i>3 hari lalu &bull; Jakarta - Bandung</small>
+                </div>
+              </div>
+              <span class="badge bg-success-subtle text-success px-3 py-2 fw-semibold">Agenda Meetup</span>
+            </div>
+            <h5 class="fw-bold mb-2 text-dark">Touring Silaturahmi & Coaching Clinic Safety Driving ke Bandung</h5>
+            <p class="text-secondary small mb-3">
+              Diberitahukan kepada seluruh anggota AutoNova Club Indonesia, agenda gathering dan touring akhir pekan ini: titik kumpul di Showroom AutoNova Sudirman pukul 06:00 WIB, rute melalui Tol Cipularang menuju Bandung, dilanjutkan sesi safety driving bersama instruktur bersertifikasi di Lembang. Pendaftaran gratis untuk member berstiker resmi!
+            </p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-outline-secondary border-0 text-muted d-flex align-items-center gap-1" onclick="likeThread(this)">
+                  <i class="bi bi-hand-thumbs-up"></i> <span class="like-count">78</span> Suka
+                </button>
+                <span class="text-muted small"><i class="bi bi-chat-dots me-1"></i>65 Pendaftar</span>
+              </div>
+              <a href="javascript:void(0)" onclick="alert('Pendaftaran tercatat! Anda akan dimasukkan ke grup WhatsApp peserta touring.')" class="btn btn-sm btn-an-primary">Ikuti Agenda</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FORMULIR INTERAKTIF: BUAT TOPIK BARU -->
+        <div id="form-tambah-topik" class="form-card-box mt-5">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-pencil-square fs-4 text-primary"></i>
+            <h4 class="fw-bold mb-0" style="color: var(--an-dark);">Buat Topik Diskusi Baru</h4>
+          </div>
+          <p class="text-muted small mb-4">
+            Ajukan pertanyaan, bagikan pengalaman berkendara, atau buka diskusi baru bersama ribuan member komunitas otomotif AutoNova.
+          </p>
+
+          <form id="forumNewThreadForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label-custom">Nama Pengirim / Panggilan <span class="text-danger">*</span></label>
+                <input type="text" id="threadAuthor" class="form-control form-control-custom" placeholder="Contoh: Hendra Wijaya" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-custom">Status Kepemilikan Mobil / Peran</label>
+                <input type="text" id="threadRole" class="form-control form-control-custom" placeholder="Contoh: Pemilik Tesla Model 3 / Penggemar EV">
+              </div>
+              <div class="col-md-12">
+                <label class="form-label-custom">Pilih Kategori Topik <span class="text-danger">*</span></label>
+                <select id="threadCategory" class="form-select form-select-custom" required>
+                  <option value="tips">Tips & Perawatan Kendaraan</option>
+                  <option value="modifikasi">Modifikasi, Aksesoris & Tuning</option>
+                  <option value="tanya">Tanya Montir / Kendala Teknis Mesin</option>
+                  <option value="meetup">Agenda Kumpul & Touring Komunitas</option>
+                </select>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label-custom">Judul Diskusi <span class="text-danger">*</span></label>
+                <input type="text" id="threadTitle" class="form-control form-control-custom" placeholder="Tuliskan judul topik secara jelas dan ringkas..." required>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label-custom">Isi Lengkap Diskusi / Pertanyaan <span class="text-danger">*</span></label>
+                <textarea id="threadContent" class="form-control form-control-custom" rows="4" placeholder="Uraikan detail pembahasan, pertanyaan, atau tips yang ingin Anda bagikan kepada komunitas..." required></textarea>
+              </div>
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-an-primary px-4 py-2">
+                  <i class="bi bi-send-check-fill me-2"></i>Terbitkan Topik ke Komunitas
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Kolom Kanan: Sidebar Komunitas (Rules, Master Montir, Event Widget) -->
+      <div class="col-lg-4">
+        
+        <!-- Widget Pendaftaran Member Baru -->
+        <div class="card card-autonova p-4 mb-4 bg-light border">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-card-checklist fs-4 text-primary"></i>
+            <h5 class="fw-bold mb-0">Gabung Jadi Member</h5>
+          </div>
+          <p class="small text-secondary mb-3">
+            Dapatkan kartu member digital resmi, diskon 15% servis berkala, dan akses prioritas ke jalur touring tahunan.
+          </p>
+          <ul class="list-unstyled small text-muted mb-4">
+            <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Stiker Emblem Fisik Komunitas</li>
+            <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Akses Grup WhatsApp Eksklusif</li>
+            <li class="mb-2"><i class="bi bi-check2 text-success me-2"></i>Voucher Belanja Rp 10 Juta</li>
+          </ul>
+          <a href="promosi.html#voucher-section" class="btn btn-an-primary btn-sm w-100">Klaim Keuntungan Member</a>
+        </div>
+
+        <!-- Widget Konsultan Montir Siaga -->
+        <div class="card card-autonova p-4 mb-4">
+          <h5 class="fw-bold mb-3 border-bottom pb-2">Montir & Ahli Siaga Forum</h5>
+          
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" class="rounded-circle" style="width: 46px; height: 46px; object-fit: cover;" alt="Montir Bambang Santoso">
+            <div>
+              <h6 class="mb-0 fw-bold">Bambang Santoso</h6>
+              <small class="text-primary fw-semibold">Master Diagnostic ASE</small>
+              <div class="text-muted small"><i class="bi bi-circle-fill text-success" style="font-size: 8px;"></i> Online Menjawab</div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="rounded-circle" style="width: 46px; height: 46px; object-fit: cover;" alt="Teknisi EV">
+            <div>
+              <h6 class="mb-0 fw-bold">Rico Dharmawan</h6>
+              <small class="text-success fw-semibold">Spesialis Baterai & Inverter EV</small>
+              <div class="text-muted small"><i class="bi bi-circle-fill text-success" style="font-size: 8px;"></i> Online Menjawab</div>
+            </div>
+          </div>
+
+          <p class="small text-muted mb-0 border-top pt-2">
+            Konsultasi teknis di forum ini diawasi langsung oleh mekanik bersertifikasi bengkel resmi AutoNova.
+          </p>
+        </div>
+
+        <!-- Tata Tertib Forum Komunitas -->
+        <div class="card card-autonova p-4">
+          <h5 class="fw-bold mb-3 border-bottom pb-2">Tata Tertib Berdiskusi</h5>
+          <ol class="small text-secondary ps-3 mb-0" style="line-height: 1.8;">
+            <li class="mb-1">Gunakan bahasa yang sopan, santun, dan saling menghargai sesama pengguna jalan.</li>
+            <li class="mb-1">Dilarang menyebarkan berita hoax, ujaran kebencian, atau promosi judi/spam.</li>
+            <li class="mb-1">Utamakan mengunggah foto orisinal dan fakta saat membahas ulasan kerusakan kendaraan.</li>
+            <li class="mb-1">Patuhi regulasi keselamatan berlalu lintas dan hindari provokasi balap liar di jalan umum.</li>
+          </ol>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. FOOTER
+       ========================================================================== -->
+  <footer class="footer-autonova">
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1.1rem;">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <h4 class="fw-bold text-white mb-0">AutoNova <span class="text-primary-emphasis">Nusantara</span></h4>
+          </div>
+          <p class="small text-secondary mb-4" style="line-height: 1.7;">
+            Wadah persaudaraan otomotif dan showroom digital terpercaya di Indonesia. Membangun budaya berkendara yang aman, cerdas, dan menjunjung tinggi sportivitas.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="https://instagram.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-youtube"></i></a>
+            <a href="https://whatsapp.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Menu Navigasi</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="utama.html" class="fw-bold text-white"><i class="bi bi-stars text-warning me-1"></i>Portal Utama</a></li>
+            <li><a href="index.html">Beranda & Profil</a></li>
+            <li><a href="produk.html">Katalog Penjualan</a></li>
+            <li><a href="promosi.html">Promo & Diskon</a></li>
+            <li><a href="komunitas.html">Forum Komunitas</a></li>
+            <li><a href="transaksi.html">Form Pemesanan Unit</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Kategori Diskusi</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="komunitas.html">Tips Perawatan Baterai EV</a></li>
+            <li><a href="komunitas.html">Modifikasi Kaki-kaki 4x4</a></li>
+            <li><a href="komunitas.html">Spesifikasi Oli Supercar</a></li>
+            <li><a href="komunitas.html">Jadwal Touring Regional</a></li>
+            <li><a href="komunitas.html">Tanya Montir Bersertifikat</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Sekretariat Komunitas</h5>
+          <p class="small text-secondary mb-2">
+            <i class="bi bi-geo-alt-fill text-danger me-2"></i>Gedung AutoNova Lt. 2, Jl. Jend. Sudirman Kav. 88, Jakarta Selatan.
+          </p>
+          <p class="small text-secondary mb-2">
+            <i class="bi bi-whatsapp text-success me-2"></i><strong>Admin Klub: 0812-9988-CLUB</strong>
+          </p>
+          <p class="small text-secondary mb-0">
+            <i class="bi bi-envelope-fill text-primary me-2"></i>club@autonova-nusantara.co.id
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <div>&copy; 2026 AutoNova Club Indonesia &bull; PT AutoNova Nusantara Motor.</div>
+        <div class="d-flex gap-3 small text-secondary">
+          <span>Kode Etik Anggota</span>
+          <span>&bull;</span>
+          <span>Panduan Moderasi Forum</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       6. MODAL KERANJANG PEMESANAN
+       ========================================================================== -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold" id="cartModalLabel">
+            <i class="bi bi-cart3 me-2 text-warning"></i>Keranjang Pemesanan Kendaraan Anda
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div id="cartItemsList"></div>
+          <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+            <h6 class="fw-bold mb-0">Total Estimasi Harga Unit:</h6>
+            <h4 class="car-price-tag mb-0" id="cartTotalPrice">Rp 0</h4>
+          </div>
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-outline-danger" onclick="clearCart()">Kosongkan</button>
+          <a href="transaksi.html" class="btn btn-an-primary">
+            <i class="bi bi-credit-card me-1"></i>Lanjut ke Formulir Pemesanan
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript Core -->
+  <script src="js/main.js"></script>
+</body>
+</html>

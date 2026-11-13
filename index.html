@@ -1,1535 +1,921 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Navigasi Modern</title>
-  <!-- Google Fonts -->
+  <meta name="description" content="AutoNova Nusantara - Pusat Penjualan Mobil Resmi, Showroom Modern, Layanan Pembiayaan Kredit, Program Promo Spesial, dan Komunitas Penggemar Otomotif Terbesar di Indonesia.">
+  <meta name="keywords" content="showroom mobil, jual mobil online, mobil listrik, tesla indonesia, jeep rubicon, promo mobil 2026, komunitas otomotif, servis mobil">
+  <meta name="author" content="AutoNova Nusantara">
+  <title>AutoNova Nusantara | Showroom Resmi, Penjualan Online & Komunitas Otomotif</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    /* =========================================
-       CSS VARIABLES & THEMING
-       ========================================= */
-    :root {
-      --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      
-      /* Light Theme Colors */
-      --bg-body: #f8fafc;
-      --bg-card: #ffffff;
-      --bg-card-hover: #f1f5f9;
-      --bg-nav: rgba(255, 255, 255, 0.85);
-      --bg-dropdown: #ffffff;
-      --border-color: #e2e8f0;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --text-invert: #ffffff;
-      
-      /* Accent Colors */
-      --primary: #4f46e5;
-      --primary-rgb: 79, 70, 229;
-      --primary-hover: #4338ca;
-      --primary-light: #eef2ff;
-      --secondary: #06b6d4;
-      --accent: #f43f5e;
-      --success: #10b981;
-      
-      /* Shadows & Glassmorphism */
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-      --shadow-glow: 0 0 25px rgba(79, 70, 229, 0.25);
-      --glass-blur: blur(12px);
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --radius-full: 9999px;
-      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Dark Theme */
-    [data-theme="dark"] {
-      --bg-body: #0b0f19;
-      --bg-card: #131b2e;
-      --bg-card-hover: #1e293b;
-      --bg-nav: rgba(15, 23, 42, 0.85);
-      --bg-dropdown: #131b2e;
-      --border-color: #1e293b;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-invert: #0f172a;
-      --primary-light: rgba(79, 70, 229, 0.15);
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-      --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
-      --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.35);
-    }
-
-    /* Reset & Dasar */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: var(--font-main);
-      background-color: var(--bg-body);
-      color: var(--text-main);
-      line-height: 1.6;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      min-height: 100vh;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      outline: none;
-      background: none;
-    }
-
-    /* Background Ambient Lights */
-    .ambient-glow {
-      position: fixed;
-      top: -150px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(79, 70, 229, 0.18) 0%, rgba(6, 182, 212, 0.12) 50%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-      filter: blur(50px);
-    }
-
-    /* =========================================
-       HEADER & NAVIGATION BAR
-       ========================================= */
-    .header-nav {
-      position: sticky;
-      top: 14px;
-      z-index: 100;
-      width: 92%;
-      max-width: 1240px;
-      margin: 0 auto;
-      background: var(--bg-nav);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      transition: var(--transition);
-    }
-
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 68px;
-      padding: 0 22px;
-    }
-
-    /* Brand Logo */
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.5px;
-      color: var(--text-main);
-    }
-
-    .brand-icon {
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.35);
-      transition: transform 0.3s ease;
-    }
-
-    .brand-logo:hover .brand-icon {
-      transform: rotate(6deg) scale(1.05);
-    }
-
-    .brand-badge {
-      font-size: 0.65rem;
-      padding: 2px 7px;
-      background: var(--primary-light);
-      color: var(--primary);
-      border-radius: var(--radius-full);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* Desktop Navigation Menu */
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      list-style: none;
-    }
-
-    .nav-item {
-      position: relative;
-    }
-
-    .nav-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 9px 16px;
-      font-size: 0.93rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      border-radius: var(--radius-sm);
-      transition: var(--transition);
-      user-select: none;
-    }
-
-    .nav-link:hover,
-    .nav-item.active .nav-link {
-      color: var(--primary);
-      background: var(--primary-light);
-    }
-
-    .nav-link svg.arrow {
-      transition: transform 0.25s ease;
-      width: 14px;
-      height: 14px;
-    }
-
-    .nav-item:hover .nav-link svg.arrow {
-      transform: rotate(180deg);
-    }
-
-    /* Dropdown Menu */
-    .dropdown-menu {
-      position: absolute;
-      top: calc(100% + 10px);
-      left: 0;
-      width: 250px;
-      background: var(--bg-dropdown);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lg);
-      padding: 10px;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      z-index: 110;
-    }
-
-    .nav-item:hover .dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .dropdown-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: var(--radius-sm);
-      transition: var(--transition);
-      color: var(--text-main);
-    }
-
-    .dropdown-item:hover {
-      background: var(--primary-light);
-      color: var(--primary);
-      transform: translateX(4px);
-    }
-
-    .dropdown-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-      background: var(--primary-light);
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .dropdown-title {
-      font-size: 0.88rem;
-      font-weight: 600;
-    }
-
-    .dropdown-desc {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    /* Navigation Action Buttons */
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    /* Search Button (Triggers Search Modal) */
-    .search-btn {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      background: var(--bg-card-hover);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-full);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: var(--transition);
-    }
-
-    .search-btn:hover {
-      color: var(--text-main);
-      border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.15);
-    }
-
-    .kbd-shortcut {
-      font-size: 0.7rem;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-
-    /* Theme Toggle */
-    .theme-toggle-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-full);
-      background: var(--bg-card-hover);
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-main);
-      transition: var(--transition);
-    }
-
-    .theme-toggle-btn:hover {
-      background: var(--primary-light);
-      color: var(--primary);
-      transform: scale(1.08);
-    }
-
-    /* CTA Button */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 18px;
-      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: 600;
-      border-radius: var(--radius-full);
-      box-shadow: 0 4px 14px rgba(var(--primary-rgb), 0.35);
-      transition: var(--transition);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.45);
-    }
-
-    /* Mobile Hamburger */
-    .hamburger-btn {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      gap: 5px;
-      background: var(--bg-card-hover);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-    }
-
-    .hamburger-btn span {
-      width: 20px;
-      height: 2px;
-      background: var(--text-main);
-      border-radius: 2px;
-      transition: var(--transition);
-    }
-
-    .hamburger-btn.active span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .hamburger-btn.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger-btn.active span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* Mobile Drawer */
-    .mobile-drawer {
-      display: none;
-      position: fixed;
-      top: 92px;
-      left: 4%;
-      right: 4%;
-      background: var(--bg-dropdown);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 20px;
-      box-shadow: var(--shadow-lg);
-      z-index: 99;
-      transform: translateY(-20px);
-      opacity: 0;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .mobile-drawer.open {
-      display: block;
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    .mobile-menu-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .mobile-menu-list a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 14px;
-      font-weight: 600;
-      border-radius: var(--radius-sm);
-      color: var(--text-main);
-      transition: var(--transition);
-    }
-
-    .mobile-menu-list a:hover,
-    .mobile-menu-list a.active {
-      background: var(--primary-light);
-      color: var(--primary);
-    }
-
-    /* =========================================
-       MAIN CONTENT CONTAINER
-       ========================================= */
-    .main-wrapper {
-      width: 92%;
-      max-width: 1240px;
-      margin: 40px auto 60px;
-      position: relative;
-      z-index: 1;
-      flex: 1;
-    }
-
-    /* Breadcrumbs */
-    .breadcrumb-bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-
-    .breadcrumb-bar a {
-      transition: color 0.2s;
-    }
-
-    .breadcrumb-bar a:hover {
-      color: var(--primary);
-    }
-
-    .breadcrumb-bar span.separator {
-      opacity: 0.5;
-    }
-
-    /* Dynamic View Content */
-    .view-container {
-      position: relative;
-    }
-
-    .view-section {
-      display: none;
-      animation: fadeInSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    .view-section.active {
-      display: block;
-    }
-
-    @keyframes fadeInSlide {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Hero Section */
-    .hero-banner {
-      background: linear-gradient(135deg, rgba(var(--primary-rgb), 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 48px 36px;
-      text-align: center;
-      margin-bottom: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: var(--radius-full);
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 18px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .hero-title {
-      font-size: 2.6rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 14px;
-      line-height: 1.2;
-    }
-
-    .hero-title span {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtitle {
-      max-width: 620px;
-      margin: 0 auto 28px;
-      font-size: 1.05rem;
-      color: var(--text-muted);
-    }
-
-    /* Quick Filter Tabs */
-    .filter-tabs {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .filter-tab {
-      padding: 8px 18px;
-      border-radius: var(--radius-full);
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      transition: var(--transition);
-    }
-
-    .filter-tab:hover,
-    .filter-tab.active {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-      box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
-    }
-
-    /* Navigation Grid Cards */
-    .nav-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 22px;
-    }
-
-    .nav-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: var(--transition);
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .nav-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .nav-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(var(--primary-rgb), 0.3);
-    }
-
-    .nav-card:hover::before {
-      opacity: 1;
-    }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      transition: transform 0.25s ease;
-    }
-
-    .nav-card:hover .card-icon {
-      transform: scale(1.12);
-    }
-
-    .icon-blue { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
-    .icon-purple { background: rgba(147, 51, 234, 0.12); color: #9333ea; }
-    .icon-emerald { background: rgba(16, 185, 129, 0.12); color: #10b981; }
-    .icon-amber { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
-    .icon-rose { background: rgba(244, 63, 94, 0.12); color: #f43f5e; }
-    .icon-cyan { background: rgba(6, 182, 212, 0.12); color: #06b6d4; }
-
-    .card-badge {
-      font-size: 0.72rem;
-      padding: 3px 8px;
-      border-radius: var(--radius-full);
-      font-weight: 700;
-      background: var(--bg-card-hover);
-      color: var(--text-muted);
-    }
-
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .card-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      flex-grow: 1;
-    }
-
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 8px;
-      padding-top: 12px;
-      border-top: 1px dashed var(--border-color);
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    .card-footer svg {
-      transition: transform 0.2s ease;
-    }
-
-    .nav-card:hover .card-footer svg {
-      transform: translateX(5px);
-    }
-
-    /* Content Showcase for Other Pages */
-    .page-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .page-box h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: var(--text-main);
-    }
-
-    .page-box p {
-      color: var(--text-muted);
-      margin-bottom: 24px;
-      font-size: 1rem;
-    }
-
-    /* Interactive Stats Bar */
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .stat-item {
-      padding: 20px;
-      background: var(--bg-card-hover);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-color);
-      text-align: center;
-    }
-
-    .stat-number {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .stat-label {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* =========================================
-       SEARCH MODAL (COMMAND PALETTE)
-       ========================================= */
-    .search-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 200;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: 12vh;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.25s ease;
-    }
-
-    .search-modal-backdrop.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .search-modal-box {
-      width: 90%;
-      max-width: 600px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-      transform: scale(0.95) translateY(-10px);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .search-modal-backdrop.active .search-modal-box {
-      transform: scale(1) translateY(0);
-    }
-
-    .search-input-header {
-      display: flex;
-      align-items: center;
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border-color);
-      gap: 12px;
-    }
-
-    .search-input-header svg {
-      color: var(--text-muted);
-    }
-
-    .search-input-header input {
-      flex: 1;
-      border: none;
-      background: none;
-      outline: none;
-      font-size: 1.05rem;
-      font-family: inherit;
-      color: var(--text-main);
-    }
-
-    .search-close-badge {
-      font-size: 0.75rem;
-      background: var(--bg-card-hover);
-      border: 1px solid var(--border-color);
-      padding: 3px 8px;
-      border-radius: 4px;
-      color: var(--text-muted);
-      cursor: pointer;
-    }
-
-    .search-results-list {
-      max-height: 320px;
-      overflow-y: auto;
-      padding: 12px;
-      list-style: none;
-    }
-
-    .search-result-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 12px 14px;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      transition: var(--transition);
-      color: var(--text-main);
-    }
-
-    .search-result-item:hover,
-    .search-result-item.selected {
-      background: var(--primary-light);
-      color: var(--primary);
-    }
-
-    .search-result-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
-      background: var(--bg-card-hover);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.95rem;
-    }
-
-    .search-modal-footer {
-      padding: 10px 20px;
-      background: var(--bg-card-hover);
-      border-top: 1px solid var(--border-color);
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    /* =========================================
-       FOOTER
-       ========================================= */
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding: 30px 0;
-      background: var(--bg-card);
-      margin-top: auto;
-      text-align: center;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-
-    .footer-content {
-      width: 92%;
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary);
-    }
-
-    /* =========================================
-       RESPONSIVE BREAKPOINTS
-       ========================================= */
-    @media (max-width: 900px) {
-      .nav-menu, .search-btn {
-        display: none;
-      }
-      .hamburger-btn {
-        display: flex;
-      }
-      .hero-title {
-        font-size: 2rem;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .header-nav {
-        width: 96%;
-        top: 8px;
-      }
-      .hero-banner {
-        padding: 32px 18px;
-      }
-      .hero-title {
-        font-size: 1.65rem;
-      }
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons & FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Ambient Light Effect -->
-  <div class="ambient-glow"></div>
+  <!-- ==========================================================================
+       1. TOPBAR INFORMASI SHOWROOM
+       ========================================================================== -->
+  <div class="topbar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-4">
+        <span><i class="bi bi-geo-alt-fill text-danger me-1"></i> Showroom Pusat: Gedung AutoNova, Jl. Jend. Sudirman No. 88, Jakarta Selatan</span>
+        <span><i class="bi bi-clock-fill text-warning me-1"></i> Buka Setiap Hari: 08:30 - 20:00 WIB</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="bi bi-telephone-fill text-success me-1"></i> Hotline: <strong>0800-1-AUTONOVA</strong></span>
+        <span class="text-secondary">|</span>
+        <a href="utama.html" class="badge bg-primary text-white text-decoration-none px-2 py-1"><i class="bi bi-stars me-1"></i>Portal Terpadu (utama.html)</a>
+      </div>
+    </div>
+  </div>
 
-  <!-- =========================================
-       HEADER NAVIGATION
-       ========================================= -->
-  <header class="header-nav">
-    <div class="nav-container">
+  <!-- ==========================================================================
+       2. NAVBAR UTAMA (NAV MENU RESPONSIF)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-autonova sticky-top">
+    <div class="container">
       
       <!-- Brand Logo -->
-      <a href="javascript:void(0)" onclick="navigateTo('beranda')" class="brand-logo">
-        <div class="brand-icon">
-          <!-- Compass Icon SVG -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-          </svg>
+      <a class="navbar-brand-logo" href="index.html">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-car-side"></i>
         </div>
-        <span>NaviVerse</span>
-        <span class="brand-badge">PRO</span>
+        <div>
+          <span>AutoNova</span>
+          <span class="brand-badge ms-1">Nusantara</span>
+        </div>
       </a>
 
-      <!-- Desktop Nav Items -->
-      <ul class="nav-menu">
-        <li class="nav-item active" data-page="beranda">
-          <a href="javascript:void(0)" onclick="navigateTo('beranda')" class="nav-link">
-            <span>Beranda</span>
+      <!-- Tombol Aksi Mobile (Keranjang & Hamburger) -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="btn btn-light position-relative p-2 border open-cart-modal-btn" aria-label="Keranjang Pemesanan">
+          <i class="bi bi-cart3 fs-5 text-dark"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge" style="display:none;">0</span>
+        </button>
+        <button class="navbar-toggler border-0 p-2 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Buka navigasi">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Menu Navigasi Desktop & Mobile Collapse -->
+      <div class="collapse navbar-collapse" id="navbarMainContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" aria-current="page" href="index.html">
+              <i class="bi bi-house-door-fill me-1"></i> Beranda & Profil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="produk.html">
+              <i class="bi bi-grid-fill me-1"></i> Katalog Penjualan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="promosi.html">
+              <i class="bi bi-tag-fill me-1 text-danger"></i> Promo & Diskon
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="komunitas.html">
+              <i class="bi bi-chat-square-text-fill me-1 text-info"></i> Forum Komunitas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="transaksi.html">
+              <i class="bi bi-receipt-cutoff me-1 text-success"></i> Form Pemesanan
+            </a>
+          </li>
+        </ul>
+
+        <!-- Action Items Sebelah Kanan (Desktop) -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <!-- Tombol Keranjang -->
+          <button class="btn btn-outline-secondary position-relative px-3 py-2 open-cart-modal-btn" title="Lihat Keranjang Pemesanan">
+            <i class="bi bi-cart3 me-1"></i>
+            <span class="fw-semibold">Keranjang</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge" style="display:none;">0</span>
+          </button>
+
+          <!-- Tombol CTA Booking Transaksi -->
+          <a href="transaksi.html" class="btn btn-an-primary d-flex align-items-center gap-2">
+            <i class="bi bi-lightning-charge-fill"></i>
+            <span>Pesan Unit Baru</span>
           </a>
-        </li>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       3. HERO CAROUSEL INTERAKTIF
+       ========================================================================== -->
+  <section class="container my-4">
+    <div id="heroAutoNovaCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="4500">
+      
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroAutoNovaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroAutoNovaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroAutoNovaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- Carousel Slides -->
+      <div class="carousel-inner">
         
-        <!-- Dropdown Menu -->
-        <li class="nav-item" data-page="layanan">
-          <a href="javascript:void(0)" class="nav-link">
-            <span>Layanan</span>
-            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </a>
-          <div class="dropdown-menu">
-            <a href="javascript:void(0)" onclick="navigateTo('layanan')" class="dropdown-item">
-              <div class="dropdown-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        <!-- Slide 1: Showroom & Profil Utama -->
+        <div class="carousel-item active hero-carousel-item">
+          <img src="images/banner_mobil.jpg" alt="Showroom Resmi AutoNova Nusantara">
+          <div class="hero-carousel-overlay">
+            <div class="container text-white px-4 px-md-5">
+              <div class="col-lg-8">
+                <span class="badge bg-danger px-3 py-2 text-uppercase fw-bold mb-3 shadow-sm">
+                  <i class="bi bi-patch-check-fill me-1"></i> Showroom Resmi Bergaransi ATPM
+                </span>
+                <h1 class="display-4 fw-extrabold text-white mb-3" style="font-weight: 800; line-height: 1.15;">
+                  Wujudkan Mobil Impian dengan Standar Kualitas Dunia
+                </h1>
+                <p class="lead text-light mb-4" style="font-size: 1.15rem; max-width: 620px;">
+                  AutoNova Nusantara menyediakan unit kendaraan premium baru dan tersertifikasi 150-Point Inspection, didukung garansi mesin hingga 5 tahun dan kemudahan transaksi digital.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                  <a href="produk.html" class="btn btn-an-accent btn-lg px-4 shadow">
+                    <i class="bi bi-car-front-fill me-2"></i>Lihat Katalog Unit
+                  </a>
+                  <a href="#tentang-kami" class="btn btn-outline-light btn-lg px-4">
+                    <i class="bi bi-info-circle me-2"></i>Profil Perusahaan
+                  </a>
+                </div>
               </div>
-              <div>
-                <div class="dropdown-title">Web Development</div>
-                <div class="dropdown-desc">Aplikasi modern & responsif</div>
-              </div>
-            </a>
-            <a href="javascript:void(0)" onclick="navigateTo('layanan')" class="dropdown-item">
-              <div class="dropdown-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-              </div>
-              <div>
-                <div class="dropdown-title">Mobile Apps</div>
-                <div class="dropdown-desc">iOS & Android solutions</div>
-              </div>
-            </a>
-            <a href="javascript:void(0)" onclick="navigateTo('layanan')" class="dropdown-item">
-              <div class="dropdown-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-              </div>
-              <div>
-                <div class="dropdown-title">UI/UX Design</div>
-                <div class="dropdown-desc">Tampilan estetis & ergonomis</div>
-              </div>
-            </a>
+            </div>
           </div>
-        </li>
+        </div>
 
-        <li class="nav-item" data-page="portofolio">
-          <a href="javascript:void(0)" onclick="navigateTo('portofolio')" class="nav-link">
-            <span>Portofolio</span>
-          </a>
-        </li>
+        <!-- Slide 2: Inovasi EV & Masa Depan -->
+        <div class="carousel-item hero-carousel-item">
+          <img src="images/mobil1.jpg" alt="Tesla Model 3 EV Ramah Lingkungan">
+          <div class="hero-carousel-overlay">
+            <div class="container text-white px-4 px-md-5">
+              <div class="col-lg-8">
+                <span class="badge bg-success px-3 py-2 text-uppercase fw-bold mb-3 shadow-sm">
+                  <i class="bi bi-lightning-fill me-1"></i> Era Kendaraan Listrik (EV)
+                </span>
+                <h1 class="display-4 fw-extrabold text-white mb-3" style="font-weight: 800; line-height: 1.15;">
+                  Tesla Model 3 EV: Efisiensi Maksimal Tanpa Emisi
+                </h1>
+                <p class="lead text-light mb-4" style="font-size: 1.15rem; max-width: 620px;">
+                  Nikmati sensasi akselerasi instan 0-100 km/j dalam 3.3 detik dengan jarak tempuh 576 KM per charge. Termasuk pemasangan Wall Connector Home Charging gratis di rumah Anda.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                  <a href="javascript:void(0)" onclick="directBuy('tesla-model-3')" class="btn btn-an-primary btn-lg px-4 shadow">
+                    <i class="bi bi-bag-check-fill me-2"></i>Pesan Tesla Sekarang
+                  </a>
+                  <a href="promosi.html" class="btn btn-outline-light btn-lg px-4">
+                    <i class="bi bi-gift-fill me-2"></i>Klaim Subsidi Khusus EV
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <li class="nav-item" data-page="tentang">
-          <a href="javascript:void(0)" onclick="navigateTo('tentang')" class="nav-link">
-            <span>Tentang</span>
-          </a>
-        </li>
+        <!-- Slide 3: Supercar & Muscle Car -->
+        <div class="carousel-item hero-carousel-item">
+          <img src="images/mobil2.jpg" alt="Chevrolet Corvette C8 Supercar">
+          <div class="hero-carousel-overlay">
+            <div class="container text-white px-4 px-md-5">
+              <div class="col-lg-8">
+                <span class="badge bg-warning text-dark px-3 py-2 text-uppercase fw-bold mb-3 shadow-sm">
+                  <i class="bi bi-speedometer2 me-1"></i> Performa Tinggi & Supercar
+                </span>
+                <h1 class="display-4 fw-extrabold text-white mb-3" style="font-weight: 800; line-height: 1.15;">
+                  Sensasi Adrenalin Murni di Balik Kemudi
+                </h1>
+                <p class="lead text-light mb-4" style="font-size: 1.15rem; max-width: 620px;">
+                  Koleksi eksklusif Corvette Stingray C8, Ferrari 488 GTB, dan Mustang GT 5.0 V8. Dapatkan pengalaman uji kemudi privat di sirkuit mitra bersama instruktur profesional kami.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                  <a href="produk.html" class="btn btn-an-accent btn-lg px-4 shadow">
+                    <i class="bi bi-trophy-fill me-2"></i>Eksplorasi Supercar
+                  </a>
+                  <a href="transaksi.html" class="btn btn-outline-light btn-lg px-4">
+                    <i class="bi bi-calendar-check me-2"></i>Jadwalkan Konsultasi
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <li class="nav-item" data-page="kontak">
-          <a href="javascript:void(0)" onclick="navigateTo('kontak')" class="nav-link">
-            <span>Kontak</span>
-          </a>
-        </li>
-      </ul>
+      </div>
 
-      <!-- Action Items: Search, Theme Toggle, CTA -->
-      <div class="nav-actions">
-        <!-- Quick Search -->
-        <button class="search-btn" onclick="openSearchModal()" title="Cari Cepat (Ctrl+K)">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <span>Cari...</span>
-          <span class="kbd-shortcut">Ctrl+K</span>
-        </button>
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroAutoNovaCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Sebelumnya</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroAutoNovaCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Berikutnya</span>
+      </button>
+    </div>
+  </section>
 
-        <!-- Theme Mode Switcher -->
-        <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Ubah Tema">
-          <svg id="themeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <!-- Moon default for light mode -->
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
+  <!-- ==========================================================================
+       4. HIGHLIGHT VALUE / STATISTIK SHOWROOM
+       ========================================================================== -->
+  <section class="container my-5">
+    <div class="row g-4">
+      <div class="col-6 col-md-3">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h4 class="fw-bold mb-1">Garansi 5 Tahun</h4>
+          <p class="text-secondary small mb-0">Proteksi mesin, transmisi, & sistem kelistrikan bergaransi resmi.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="bi bi-check2-circle"></i>
+          </div>
+          <h4 class="fw-bold mb-1">150-Point Audit</h4>
+          <p class="text-secondary small mb-0">Setiap unit lolos uji kelayakan ketat bebas banjir dan benturan.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="bi bi-truck"></i>
+          </div>
+          <h4 class="fw-bold mb-1">Kirim Nusantara</h4>
+          <p class="text-secondary small mb-0">Pengiriman towing aman langsung tiba di depan garasi rumah Anda.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="bi bi-people"></i>
+          </div>
+          <h4 class="fw-bold mb-1">12.800+ Member</h4>
+          <p class="text-secondary small mb-0">Komunitas antusias otomotif aktif berbagi tips, edukasi & touring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- CTA Button -->
-        <button class="btn-primary" onclick="alert('Selamat datang di Portal Navigasi!')">
-          <span>Jelajahi</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </button>
+  <!-- ==========================================================================
+       5. WEB PROFILE SECTION: TENTANG KAMI, VISI, MISI & TIM MANAJEMEN
+       ========================================================================== -->
+  <section id="tentang-kami" class="py-5 bg-white border-top border-bottom">
+    <div class="container">
+      
+      <div class="row align-items-center g-5 mb-5">
+        <div class="col-lg-6">
+          <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-2 mb-2 text-uppercase">
+            <i class="bi bi-buildings-fill me-1"></i> Profil Perusahaan
+          </span>
+          <h2 class="display-6 fw-bold mb-4" style="color: var(--an-dark);">
+            Pelopor Showroom Modern Terpadu & Ekosistem Otomotif Nasional
+          </h2>
+          <p class="text-secondary mb-3" style="line-height: 1.8;">
+            Didirikan pada tahun 2018 di Jakarta, <strong>PT AutoNova Nusantara Motor</strong> hadir merevolusi industri penjualan kendaraan bermotor di tanah air. Kami mengintegrasikan pengalaman transaksi digital yang transparan, ketersediaan unit mobil sport, SUV tangguh, dan mobil listrik berteknologi terdepan, serta layanan purnajual bersertifikasi internasional.
+          </p>
+          <p class="text-secondary mb-4" style="line-height: 1.8;">
+            Melalui platform digital AutoNova, pelanggan tidak hanya dapat membeli mobil impian secara daring dan menghitung skema kredit secara akurat, namun juga terhubung langsung dengan para montir andal dan ribuan pemilik kendaraan lainnya melalui <em>AutoNova Club Indonesia</em>.
+          </p>
 
-        <!-- Hamburger Icon for Mobile -->
-        <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <!-- Visi & Misi Cards -->
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="p-3 rounded-3 border bg-light h-100">
+                <h6 class="fw-bold text-primary mb-2"><i class="bi bi-eye-fill me-2"></i>Visi Perusahaan</h6>
+                <p class="small text-muted mb-0">Menjadi pusat ekosistem otomotif dan showroom digital nomor satu di Asia Tenggara yang mengedepankan integritas, transparansi, dan kepuasan pelanggan sejati.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 rounded-3 border bg-light h-100">
+                <h6 class="fw-bold text-danger mb-2"><i class="bi bi-bullseye me-2"></i>Misi Perusahaan</h6>
+                <p class="small text-muted mb-0">Menyediakan unit kendaraan berkualitas prima dengan sertifikasi uji 150 titik, layanan kredit bersahabat, serta wadah komunitas yang saling mendukung dan menginspirasi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="position-relative">
+            <img src="images/banner_mobil.jpg" class="img-fluid rounded-4 shadow-lg w-100" alt="Showroom Gedung Utama AutoNova" style="height: 380px; object-fit: cover;">
+            <div class="position-absolute bottom-0 end-0 bg-primary text-white p-4 rounded-4 shadow-lg m-3 d-none d-sm-block" style="max-width: 260px;">
+              <h3 class="fw-bold mb-1">8+ Tahun</h3>
+              <p class="small mb-0 text-white-50">Melayani dengan dedikasi penuh di 24 cabang kota di seluruh Indonesia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tim Manajemen & Ahli Otomotif -->
+      <div class="mt-5 pt-3">
+        <div class="text-center mb-5">
+          <span class="badge bg-secondary-subtle text-secondary fw-semibold px-3 py-1 mb-2 text-uppercase">Tenaga Ahli Berpengalaman</span>
+          <h3 class="fw-bold" style="color: var(--an-dark);">Pimpinan Eksekutif & Teknisi Bersertifikat</h3>
+          <p class="text-muted small">Didukung para profesional yang telah mendedikasikan karirnya di industri otomotif selama lebih dari 15 tahun.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Tim 1 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="card card-autonova text-center p-4">
+              <div class="mx-auto mb-3" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid var(--an-primary);">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" alt="Direktur Utama AutoNova" class="w-100 h-100" style="object-fit: cover;">
+              </div>
+              <h5 class="fw-bold mb-1">Hendrawan Pratama, S.T., M.B.A.</h5>
+              <p class="text-primary small fw-semibold mb-2">Chief Executive Officer (CEO)</p>
+              <p class="text-muted small mb-0">Praktisi senior manajemen otomotif dengan pengalaman 18 tahun di produsen mobil terkemuka di Jepang dan Jerman.</p>
+            </div>
+          </div>
+
+          <!-- Tim 2 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="card card-autonova text-center p-4">
+              <div class="mx-auto mb-3" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid var(--an-secondary);">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Direktur Operasional AutoNova" class="w-100 h-100" style="object-fit: cover;">
+              </div>
+              <h5 class="fw-bold mb-1">Citra Larasati, S.E.</h5>
+              <p class="text-primary small fw-semibold mb-2">Chief Operating Officer (COO)</p>
+              <p class="text-muted small mb-0">Memimpin optimalisasi rantai pasok logistik pengiriman unit dan standardisasi showroom modern di 24 kota Indonesia.</p>
+            </div>
+          </div>
+
+          <!-- Tim 3 -->
+          <div class="col-md-4 col-sm-6">
+            <div class="card card-autonova text-center p-4">
+              <div class="mx-auto mb-3" style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: 3px solid var(--an-accent);">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Kepala Teknisi AutoNova" class="w-100 h-100" style="object-fit: cover;">
+              </div>
+              <h5 class="fw-bold mb-1">Bambang Santoso, Master ASE</h5>
+              <p class="text-primary small fw-semibold mb-2">Head of Master Diagnostic & EV Specialist</p>
+              <p class="text-muted small mb-0">Master mekanik tersertifikasi ASE & EV Diagnostic dari California, mengawasi seluruh inspeksi 150 titik kendaraan AutoNova.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
-  </header>
+  </section>
 
-  <!-- Mobile Drawer Menu -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <ul class="mobile-menu-list">
-      <li>
-        <a href="javascript:void(0)" onclick="navigateTo('beranda'); toggleMobileMenu();">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-          <span>Beranda</span>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" onclick="navigateTo('layanan'); toggleMobileMenu();">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-          <span>Layanan</span>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" onclick="navigateTo('portofolio'); toggleMobileMenu();">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-          <span>Portofolio</span>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" onclick="navigateTo('tentang'); toggleMobileMenu();">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-          <span>Tentang Kami</span>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:void(0)" onclick="navigateTo('kontak'); toggleMobileMenu();">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <span>Kontak</span>
-        </a>
-      </li>
-      <li style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border-color);">
-        <button onclick="openSearchModal(); toggleMobileMenu();" style="display:flex; align-items:center; gap:10px; width:100%; padding:10px 14px; font-weight:600; color:var(--text-muted);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <span>Buka Pencarian (Ctrl+K)</span>
-        </button>
-      </li>
-    </ul>
-  </div>
+  <!-- ==========================================================================
+       6. PENJUALAN ONLINE (PRODUK UNGGULAN & KATALOG CUPLIKAN)
+       ========================================================================== -->
+  <section class="container my-5 py-3">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+      <div>
+        <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-2 mb-2 text-uppercase">
+          <i class="bi bi-cart-check-fill me-1"></i> Penjualan Online Resmi
+        </span>
+        <h2 class="fw-bold mb-1" style="color: var(--an-dark);">Koleksi Kendaraan Siap Kirim</h2>
+        <p class="text-secondary small mb-0">Harga On-The-Road resmi, surat lengkap, dan unit telah melewati inspeksi teknis komprehensif.</p>
+      </div>
+      <a href="produk.html" class="btn btn-an-outline mt-3 mt-md-0 d-inline-flex align-items-center gap-2">
+        <span>Buka Katalog Lengkap (Semua Unit)</span>
+        <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
 
-  <!-- =========================================
-       MAIN CONTENT WRAPPER
-       ========================================= -->
-  <main class="main-wrapper">
-    
-    <!-- Breadcrumb Indicator -->
-    <nav class="breadcrumb-bar">
-      <a href="javascript:void(0)" onclick="navigateTo('beranda')">Portal</a>
-      <span class="separator">/</span>
-      <span id="breadcrumbCurrent">Beranda</span>
-    </nav>
-
-    <!-- VIEWS -->
-    <div class="view-container">
-
-      <!-- 1. HALAMAN BERANDA -->
-      <section id="view-beranda" class="view-section active">
-        <!-- Hero Banner -->
-        <div class="hero-banner">
-          <div class="hero-pill">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-            <span>Navigasi Cerdas & Cepat</span>
+    <!-- Product Cards Grid -->
+    <div class="row g-4">
+      
+      <!-- Mobil 1: Tesla Model 3 EV -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card-autonova">
+          <div class="card-img-wrapper">
+            <span class="badge bg-primary badge-floating">Paling Populer</span>
+            <span class="badge-stock"><i class="bi bi-check2 me-1"></i>Ready 3 Unit</span>
+            <img src="images/mobil1.jpg" alt="Tesla Model 3 EV Long Range">
           </div>
-          <h1 class="hero-title">Eksplorasi Semua Menu dalam <span>Satu Sentuhan</span></h1>
-          <p class="hero-subtitle">Sistem navigasi interaktif dengan desain elegan, pencarian cepat instan, perpindahan halaman dinamis, dan dukungan mode gelap.</p>
-          
-          <!-- Category Filter Tabs -->
-          <div class="filter-tabs">
-            <button class="filter-tab active" onclick="filterCards('all', this)">Semua Menu</button>
-            <button class="filter-tab" onclick="filterCards('sistem', this)">Sistem & Alat</button>
-            <button class="filter-tab" onclick="filterCards('analitik', this)">Data & Analitik</button>
-            <button class="filter-tab" onclick="filterCards('kreatif', this)">Kreatif & Desain</button>
-          </div>
-        </div>
-
-        <!-- Navigation Grid Cards -->
-        <div class="nav-grid" id="cardsGrid">
-          
-          <!-- Card 1 -->
-          <div class="nav-card" data-category="sistem" onclick="navigateTo('layanan')">
-            <div class="card-top">
-              <div class="card-icon icon-blue">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-light text-secondary border">Mobil Listrik (EV)</span>
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span class="text-muted ms-1">(4.9)</span>
               </div>
-              <span class="card-badge">Utama</span>
             </div>
-            <h3 class="card-title">Dashboard Aplikasi</h3>
-            <p class="card-desc">Pusat kendali dan manajemen aktivitas proyek harian dengan pantauan status real-time.</p>
-            <div class="card-footer">
-              <span>Buka Menu</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <h5 class="fw-bold mb-2">Tesla Model 3 EV Long Range</h5>
+            <div class="car-price-tag mb-3">Rp 1.150.000.000</div>
+            
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="spec-chip"><i class="bi bi-lightning-charge text-primary"></i> 576 KM Range</span>
+              <span class="spec-chip"><i class="bi bi-speedometer2 text-danger"></i> 450 HP AWD</span>
+              <span class="spec-chip"><i class="bi bi-people text-secondary"></i> 5 Kursi</span>
             </div>
-          </div>
 
-          <!-- Card 2 -->
-          <div class="nav-card" data-category="analitik" onclick="navigateTo('layanan')">
-            <div class="card-top">
-              <div class="card-icon icon-emerald">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-              </div>
-              <span class="card-badge">Statistik</span>
-            </div>
-            <h3 class="card-title">Analitik & Performa</h3>
-            <p class="card-desc">Laporan grafik metrik pengunjung, conversion rate, dan ringkasan tren kinerja bisnis.</p>
-            <div class="card-footer">
-              <span>Lihat Data</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-          </div>
+            <p class="text-secondary small mb-4 flex-grow-1">
+              Sedan elektrik pintar bertenaga Dual Motor AWD dengan interior minimalis dan fitur Full Self-Driving Ready.
+            </p>
 
-          <!-- Card 3 -->
-          <div class="nav-card" data-category="kreatif" onclick="navigateTo('portofolio')">
-            <div class="card-top">
-              <div class="card-icon icon-purple">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
-              </div>
-              <span class="card-badge">Showcase</span>
-            </div>
-            <h3 class="card-title">Galeri Portofolio</h3>
-            <p class="card-desc">Kumpulan hasil karya terbaik, karya digital interaktif, dan implementasi visual modern.</p>
-            <div class="card-footer">
-              <span>Jelajahi Galeri</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="nav-card" data-category="sistem" onclick="navigateTo('layanan')">
-            <div class="card-top">
-              <div class="card-icon icon-amber">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-              </div>
-              <span class="card-badge">Cloud</span>
-            </div>
-            <h3 class="card-title">Integrasi API & Cloud</h3>
-            <p class="card-desc">Koneksikan layanan Anda dengan backend microservices, database, dan webhook eksternal.</p>
-            <div class="card-footer">
-              <span>Kelola API</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="nav-card" data-category="sistem" onclick="navigateTo('kontak')">
-            <div class="card-top">
-              <div class="card-icon icon-rose">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-              </div>
-              <span class="card-badge">Preferensi</span>
-            </div>
-            <h3 class="card-title">Pusat Pengaturan</h3>
-            <p class="card-desc">Konfigurasi hak akses pengguna, keamanan otentikasi dua faktor, dan preferensi akun.</p>
-            <div class="card-footer">
-              <span>Buka Konfigurasi</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="nav-card" data-category="analitik" onclick="navigateTo('tentang')">
-            <div class="card-top">
-              <div class="card-icon icon-cyan">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-              </div>
-              <span class="card-badge">Kolaborasi</span>
-            </div>
-            <h3 class="card-title">Manajemen Tim</h3>
-            <p class="card-desc">Atur peran delegasi anggota regu, monitoring kontribusi, dan komunikasi real-time.</p>
-            <div class="card-footer">
-              <span>Lihat Anggota</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- 2. HALAMAN LAYANAN -->
-      <section id="view-layanan" class="view-section">
-        <div class="page-box">
-          <h2>Layanan & Solusi Digital</h2>
-          <p>Solusi teknologi lengkap dirancang untuk mempercepat transformasi bisnis Anda.</p>
-          <div class="stats-row">
-            <div class="stat-item">
-              <div class="stat-number">99.9%</div>
-              <div class="stat-label">Uptime Servis</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">120+</div>
-              <div class="stat-label">Proyek Selesai</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">< 100ms</div>
-              <div class="stat-label">Latensi Cepat</div>
-            </div>
-          </div>
-          <div style="margin-top: 32px;">
-            <button class="btn-primary" onclick="navigateTo('kontak')">Konsultasikan Kebutuhan Anda</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. HALAMAN PORTOFOLIO -->
-      <section id="view-portofolio" class="view-section">
-        <div class="page-box">
-          <h2>Portofolio Unggulan</h2>
-          <p>Kompilasi proyek desain antarmuka web, mobile apps, dan dashboard modern.</p>
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:20px; margin-top:20px;">
-            <div style="background:var(--bg-card-hover); border-radius:var(--radius-md); padding:20px; border:1px solid var(--border-color);">
-              <h4 style="margin-bottom:8px;">E-Commerce Redesign</h4>
-              <p style="font-size:0.85rem; color:var(--text-muted);">Peningkatan konversi 45% dengan checkout 2 langkah.</p>
-            </div>
-            <div style="background:var(--bg-card-hover); border-radius:var(--radius-md); padding:20px; border:1px solid var(--border-color);">
-              <h4 style="margin-bottom:8px;">Fintech Mobile App</h4>
-              <p style="font-size:0.85rem; color:var(--text-muted);">Desain UI neo-bank dengan keamanan biometric terintegrasi.</p>
-            </div>
-            <div style="background:var(--bg-card-hover); border-radius:var(--radius-md); padding:20px; border:1px solid var(--border-color);">
-              <h4 style="margin-bottom:8px;">Enterprise ERP UI</h4>
-              <p style="font-size:0.85rem; color:var(--text-muted);">Sistem operasional logistik berskala besar dengan dashboard cepat.</p>
+            <div class="d-flex gap-2 pt-3 border-top mt-auto">
+              <button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick="showVehicleDetail('tesla-model-3')">
+                <i class="bi bi-info-circle me-1"></i>Spesifikasi
+              </button>
+              <button class="btn btn-an-primary btn-sm flex-grow-1" onclick="directBuy('tesla-model-3')">
+                <i class="bi bi-bag-plus me-1"></i>Pesan Sekarang
+              </button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- 4. HALAMAN TENTANG -->
-      <section id="view-tentang" class="view-section">
-        <div class="page-box">
-          <h2>Tentang NaviVerse</h2>
-          <p>NaviVerse adalah contoh struktur navigasi web modern yang mengedepankan kecepatan respons, keterbacaan, dan pengalaman visual pengguna yang nyaman.</p>
-          <div style="line-height: 1.8; color: var(--text-muted);">
-            <p>Fitur Utama Navigasi:</p>
-            <ul style="margin-left: 20px; margin-bottom: 20px;">
-              <li><strong>Floating Header Glassmorphism:</strong> Navbar melayang dengan efek blur semi-transparan.</li>
-              <li><strong>Interactive Dropdown:</strong> Menu bertingkat dengan transisi mulus dan ikon visual.</li>
-              <li><strong>Quick Search Modal (Ctrl+K):</strong> Fitur command palette untuk lompat ke menu mana saja secara instan.</li>
-              <li><strong>Mode Terang & Gelap:</strong> Pergantian tema instan dengan penyimpanan memori lokal.</li>
-              <li><strong>Desain Sepenuhnya Responsif:</strong> Optimal untuk layar ponsel pintar, tablet, maupun layar desktop lebar.</li>
-            </ul>
+      <!-- Mobil 2: Corvette Stingray C8 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card-autonova">
+          <div class="card-img-wrapper">
+            <span class="badge bg-danger badge-floating">Super Performa</span>
+            <span class="badge-stock"><i class="bi bi-check2 me-1"></i>Ready 1 Unit</span>
+            <img src="images/mobil2.jpg" alt="Corvette Stingray C8 Mid-Engine">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-light text-secondary border">Supercar</span>
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <span class="text-muted ms-1">(4.8)</span>
+              </div>
+            </div>
+            <h5 class="fw-bold mb-2">Chevrolet Corvette Stingray C8</h5>
+            <div class="car-price-tag mb-3" style="color: var(--an-accent);">Rp 2.850.000.000</div>
+            
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="spec-chip"><i class="bi bi-fuel-pump text-danger"></i> 6.2L V8 Engine</span>
+              <span class="spec-chip"><i class="bi bi-speedometer2 text-danger"></i> 495 HP</span>
+              <span class="spec-chip"><i class="bi bi-stopwatch text-primary"></i> 0-100 in 2.9s</span>
+            </div>
+
+            <p class="text-secondary small mb-4 flex-grow-1">
+              Supercar bermesin tengah (mid-engine) dengan transmisi 8-speed dual clutch dan suspensi adaptif magnetik.
+            </p>
+
+            <div class="d-flex gap-2 pt-3 border-top mt-auto">
+              <button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick="showVehicleDetail('corvette-c8')">
+                <i class="bi bi-info-circle me-1"></i>Spesifikasi
+              </button>
+              <button class="btn btn-an-primary btn-sm flex-grow-1" onclick="directBuy('corvette-c8')">
+                <i class="bi bi-bag-plus me-1"></i>Pesan Sekarang
+              </button>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <!-- 5. HALAMAN KONTAK -->
-      <section id="view-kontak" class="view-section">
-        <div class="page-box">
-          <h2>Hubungi Kami</h2>
-          <p>Punya pertanyaan atau ingin berdiskusi mengenai proyek kolaborasi?</p>
-          <div style="max-width: 500px; display: flex; flex-direction: column; gap: 14px;">
-            <input type="text" placeholder="Nama Lengkap" style="padding:12px 16px; border-radius:var(--radius-sm); border:1px solid var(--border-color); background:var(--bg-card-hover); color:var(--text-main); font-family:inherit;">
-            <input type="email" placeholder="Alamat Email" style="padding:12px 16px; border-radius:var(--radius-sm); border:1px solid var(--border-color); background:var(--bg-card-hover); color:var(--text-main); font-family:inherit;">
-            <textarea placeholder="Pesan Anda..." rows="4" style="padding:12px 16px; border-radius:var(--radius-sm); border:1px solid var(--border-color); background:var(--bg-card-hover); color:var(--text-main); font-family:inherit; resize:vertical;"></textarea>
-            <button class="btn-primary" onclick="alert('Pesan Anda berhasil dikirim!')" style="justify-content:center;">Kirim Pesan</button>
+      <!-- Mobil 3: Jeep Wrangler Rubicon -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card-autonova">
+          <div class="card-img-wrapper">
+            <span class="badge bg-success badge-floating">Tangguh Ekstrem</span>
+            <span class="badge-stock"><i class="bi bi-check2 me-1"></i>Ready 2 Unit</span>
+            <img src="images/mobil3.jpg" alt="Jeep Wrangler Rubicon 4x4 Offroad">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-light text-secondary border">SUV 4x4</span>
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span class="text-muted ms-1">(5.0)</span>
+              </div>
+            </div>
+            <h5 class="fw-bold mb-2">Jeep Wrangler Rubicon 4x4</h5>
+            <div class="car-price-tag mb-3">Rp 1.750.000.000</div>
+            
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="spec-chip"><i class="bi bi-compass text-success"></i> Rock-Trac 4WD</span>
+              <span class="spec-chip"><i class="bi bi-gear-wide text-primary"></i> 2.0L Turbo</span>
+              <span class="spec-chip"><i class="bi bi-shield text-secondary"></i> Dana 44 Axle</span>
+            </div>
+
+            <p class="text-secondary small mb-4 flex-grow-1">
+              Raja petualang segala medan dengan gardan heavy duty, fitur disconnect sway-bar, dan atap modular terbuka.
+            </p>
+
+            <div class="d-flex gap-2 pt-3 border-top mt-auto">
+              <button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick="showVehicleDetail('jeep-rubicon')">
+                <i class="bi bi-info-circle me-1"></i>Spesifikasi
+              </button>
+              <button class="btn btn-an-primary btn-sm flex-grow-1" onclick="directBuy('jeep-rubicon')">
+                <i class="bi bi-bag-plus me-1"></i>Pesan Sekarang
+              </button>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
     </div>
-  </main>
+  </section>
 
-  <!-- =========================================
-       SEARCH MODAL (COMMAND PALETTE)
-       ========================================= -->
-  <div class="search-modal-backdrop" id="searchModal" onclick="handleBackdropClick(event)">
-    <div class="search-modal-box">
-      <div class="search-input-header">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" id="searchInput" placeholder="Ketik tujuan navigasi atau tekan ESC untuk keluar..." oninput="handleSearchFilter()">
-        <span class="search-close-badge" onclick="closeSearchModal()">ESC</span>
-      </div>
-      <ul class="search-results-list" id="searchResults">
-        <li class="search-result-item" onclick="quickNav('beranda')">
-          <div class="search-result-icon">🏠</div>
-          <div>
-            <div style="font-weight:600;">Beranda / Dashboard</div>
-            <div style="font-size:0.78rem; color:var(--text-muted);">Halaman muka portal navigasi</div>
+  <!-- ==========================================================================
+       7. PEMASARAN & PROMOSI HIGHLIGHT (FLASH SALE & VOUCHER PREVIEW)
+       ========================================================================== -->
+  <section class="container my-5">
+    <div class="promo-hero-banner">
+      <div class="row align-items-center g-4">
+        
+        <div class="col-lg-7">
+          <span class="badge bg-warning text-dark fw-bold px-3 py-2 mb-3 text-uppercase">
+            <i class="bi bi-fire me-1"></i> Program Promosi Spesial 2026
+          </span>
+          <h2 class="display-6 fw-bold mb-3 text-white">AutoNova Super Deals: Subsidi DP Rendah & Bebas Bunga</h2>
+          <p class="lead text-light mb-4" style="font-size: 1.05rem;">
+            Dapatkan subsidi uang muka (DP) hingga <strong>Rp 25.000.000</strong>, voucher perawatan berkala 3 tahun cuma-cuma, dan bunga kredit 0% untuk pembelian seluruh tipe unit bulan ini.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="promosi.html" class="btn btn-warning btn-lg fw-bold px-4 text-dark shadow">
+              <i class="bi bi-percent me-2"></i>Buka Semua Penawaran Promo
+            </a>
+            <button class="btn btn-outline-light btn-lg px-4" onclick="copyVoucherCode('AUTONOVA2026')">
+              <i class="bi bi-scissors me-2"></i>Salin Kode: AUTONOVA2026
+            </button>
           </div>
-        </li>
-        <li class="search-result-item" onclick="quickNav('layanan')">
-          <div class="search-result-icon">⚡</div>
-          <div>
-            <div style="font-weight:600;">Layanan & Solusi</div>
-            <div style="font-size:0.78rem; color:var(--text-muted);">Web dev, mobile apps, & UI/UX</div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="p-4 rounded-4 bg-dark bg-opacity-50 border border-light border-opacity-25 text-center">
+            <h6 class="text-uppercase text-warning fw-bold tracking-wider mb-3">
+              <i class="bi bi-hourglass-split me-1"></i> Promo Berakhir Dalam:
+            </h6>
+            <div class="d-flex justify-content-center gap-2 mb-3">
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdDays">03</div>
+                <div class="countdown-lbl">Hari</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdHours">14</div>
+                <div class="countdown-lbl">Jam</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdMinutes">28</div>
+                <div class="countdown-lbl">Menit</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdSeconds">45</div>
+                <div class="countdown-lbl">Detik</div>
+              </div>
+            </div>
+            <small class="text-light text-opacity-75 d-block">
+              *Kuota promo terbatas untuk 50 pemesan pertama melalui formulir online.
+            </small>
           </div>
-        </li>
-        <li class="search-result-item" onclick="quickNav('portofolio')">
-          <div class="search-result-icon">🎨</div>
-          <div>
-            <div style="font-weight:600;">Galeri Portofolio</div>
-            <div style="font-size:0.78rem; color:var(--text-muted);">Katalog proyek dan showcase</div>
-          </div>
-        </li>
-        <li class="search-result-item" onclick="quickNav('tentang')">
-          <div class="search-result-icon">📖</div>
-          <div>
-            <div style="font-weight:600;">Tentang Kami</div>
-            <div style="font-size:0.78rem; color:var(--text-muted);">Informasi arsitektur dan sistem</div>
-          </div>
-        </li>
-        <li class="search-result-item" onclick="quickNav('kontak')">
-          <div class="search-result-icon">📬</div>
-          <div>
-            <div style="font-weight:600;">Pusat Kontak</div>
-            <div style="font-size:0.78rem; color:var(--text-muted);">Kirim pesan atau bantuan</div>
-          </div>
-        </li>
-      </ul>
-      <div class="search-modal-footer">
-        <span>Tekan <strong>Esc</strong> untuk menutup</span>
-        <span>Navigasi instan</span>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- =========================================
-       FOOTER
-       ========================================= -->
-  <footer>
-    <div class="footer-content">
-      <div>&copy; 2026 NaviVerse Portal. Dibuat dengan HTML5, CSS Modern & JavaScript.</div>
-      <ul class="footer-links">
-        <li><a href="javascript:void(0)" onclick="navigateTo('beranda')">Beranda</a></li>
-        <li><a href="javascript:void(0)" onclick="navigateTo('layanan')">Layanan</a></li>
-        <li><a href="javascript:void(0)" onclick="navigateTo('kontak')">Bantuan</a></li>
-      </ul>
+  <!-- ==========================================================================
+       8. FORUM & KOMUNITAS SHOWCASE (AUTONOVA CLUB INDONESIA)
+       ========================================================================== -->
+  <section class="py-5 bg-white border-top border-bottom">
+    <div class="container">
+      
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+        <div>
+          <span class="badge bg-info-subtle text-info fw-bold px-3 py-2 mb-2 text-uppercase">
+            <i class="bi bi-people-fill me-1"></i> AutoNova Club Indonesia
+          </span>
+          <h2 class="fw-bold mb-1" style="color: var(--an-dark);">Wadah Komunitas & Forum Penggemar</h2>
+          <p class="text-secondary small mb-0">Ruang interaktif pemilik dan antusias otomotif: berbagi tips teknis, tanya montir, dan jadwal touring.</p>
+        </div>
+        <a href="komunitas.html" class="btn btn-an-outline mt-3 mt-md-0 d-inline-flex align-items-center gap-2">
+          <span>Kunjungi Forum Komunitas</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- Thread Preview 1 -->
+        <div class="col-md-4">
+          <div class="card card-autonova p-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px;">
+                R
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold">Rian Kusuma</h6>
+                <small class="text-muted"><i class="bi bi-clock me-1"></i>2 jam lalu &bull; Pemilik Tesla Model 3</small>
+              </div>
+            </div>
+            <span class="badge bg-primary-subtle text-primary align-self-start mb-2">Tips & Perawatan</span>
+            <h6 class="fw-bold mb-2">Cara Optimal Merawat Baterai EV saat Suhu Panas Tropis</h6>
+            <p class="text-secondary small mb-3 flex-grow-1">
+              Pengalaman saya setelah 1 tahun pakai EV: batasi pengisian cepat DC Fast Charging di atas 80% dan gunakan fitur pre-conditioning kabin saat mobil tercolok listrik...
+            </p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="text-muted small"><i class="bi bi-chat-dots me-1"></i>18 Komentar</span>
+              <a href="komunitas.html" class="text-primary small fw-semibold text-decoration-none">Baca Selengkapnya &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thread Preview 2 -->
+        <div class="col-md-4">
+          <div class="card card-autonova p-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px;">
+                D
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold">Dimas Setiawan</h6>
+                <small class="text-muted"><i class="bi bi-clock me-1"></i>5 jam lalu &bull; Member Rubicon</small>
+              </div>
+            </div>
+            <span class="badge bg-warning-subtle text-warning-emphasis align-self-start mb-2">Modifikasi & Tuning</span>
+            <h6 class="fw-bold mb-2">Rekomendasi Ban All-Terrain (A/T) Terbaik untuk Jeep Wrangler</h6>
+            <p class="text-secondary small mb-3 flex-grow-1">
+              Bagi teman-teman yang mau ganti ban bawaan ke ukuran 35 inci, ada beberapa opsi ban A/T yang tetap senyap di jalan tol namun sangat mencengkeram di lumpur...
+            </p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="text-muted small"><i class="bi bi-chat-dots me-1"></i>24 Komentar</span>
+              <a href="komunitas.html" class="text-primary small fw-semibold text-decoration-none">Baca Selengkapnya &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thread Preview 3 -->
+        <div class="col-md-4">
+          <div class="card card-autonova p-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px;">
+                T
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold">AutoNova Admin</h6>
+                <small class="text-muted"><i class="bi bi-patch-check-fill text-primary me-1"></i>Official Event</small>
+              </div>
+            </div>
+            <span class="badge bg-success-subtle text-success align-self-start mb-2">Agenda Meetup</span>
+            <h6 class="fw-bold mb-2">Morning Drive & Coaching Clinic Safety Driving BSD City</h6>
+            <p class="text-secondary small mb-3 flex-grow-1">
+              Halo seluruh member! Akhir pekan ini AutoNova Club mengadakan Sunday Morning Run sekaligus sesi latihan uji kendali rem darurat di Sirkuit BSD Tangerang...
+            </p>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="text-muted small"><i class="bi bi-chat-dots me-1"></i>42 Pendaftar</span>
+              <a href="komunitas.html" class="text-primary small fw-semibold text-decoration-none">Daftar Meetup &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. TESTIMONIAL KONSUMEN NYATA
+       ========================================================================== -->
+  <section class="container my-5 py-4">
+    <div class="text-center mb-5">
+      <span class="badge bg-success-subtle text-success fw-bold px-3 py-1 mb-2 text-uppercase">Ulasan Pelanggan</span>
+      <h3 class="fw-bold" style="color: var(--an-dark);">Apa Kata Pemilik Kendaraan AutoNova?</h3>
+      <p class="text-muted small">Kepuasan dan kenyamanan Anda dalam bertransaksi adalah prioritas utama showroom kami.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card-autonova p-4">
+          <div class="d-flex text-warning mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p class="text-secondary small mb-4 flex-grow-1">
+            "Proses booking Tesla Model 3 lewat website AutoNova sangat cepat dan transparan. Tim sales menguruskan STNK dan pemasangan home charging sampai tuntas tanpa ribet. Pengalaman membeli mobil terbaik!"
+          </p>
+          <div class="d-flex align-items-center gap-3 border-top pt-3">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="rounded-circle" style="width: 45px; height: 45px; object-fit: cover;" alt="Pelanggan Tesla AutoNova">
+            <div>
+              <h6 class="mb-0 fw-bold">Arya Wibowo</h6>
+              <small class="text-muted">Pengusaha &bull; Jakarta Selatan</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-autonova p-4">
+          <div class="d-flex text-warning mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p class="text-secondary small mb-4 flex-grow-1">
+            "Beli Jeep Rubicon untuk hobi offroad. Kondisi mobil luar biasa prima, hasil inspeksi 150 titik sangat detail dan sesuai fakta. Klaim voucher promo potongan Rp 25 juta juga langsung terpotong di simulasi kredit."
+          </p>
+          <div class="d-flex align-items-center gap-3 border-top pt-3">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" class="rounded-circle" style="width: 45px; height: 45px; object-fit: cover;" alt="Pelanggan Jeep Rubicon">
+            <div>
+              <h6 class="mb-0 fw-bold">Fajar Hidayat</h6>
+              <small class="text-muted">Arsitek &bull; Surabaya</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card-autonova p-4">
+          <div class="d-flex text-warning mb-3">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <p class="text-secondary small mb-4 flex-grow-1">
+            "Forum komunitas AutoNova sangat membantu pemula seperti saya. Saat mobil butuh penggantian oli khusus transmisi sportscar, teknisi montir di forum langsung memberikan solusi dan referensi bengkel resmi terdekat."
+          </p>
+          <div class="d-flex align-items-center gap-3 border-top pt-3">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" class="rounded-circle" style="width: 45px; height: 45px; object-fit: cover;" alt="Pelanggan Komunitas AutoNova">
+            <div>
+              <h6 class="mb-0 fw-bold">Nadia Maharani</h6>
+              <small class="text-muted">Dokter &bull; Bandung</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. FOOTER LENGKAP & PROFESIONAL
+       ========================================================================== -->
+  <footer class="footer-autonova">
+    <div class="container">
+      <div class="row g-4">
+        
+        <!-- Info Brand & Legal -->
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1.1rem;">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <h4 class="fw-bold text-white mb-0">AutoNova <span class="text-primary-emphasis">Nusantara</span></h4>
+          </div>
+          <p class="small text-secondary mb-4" style="line-height: 1.7;">
+            Pusat showroom resmi mobil premium, mobil listrik, supercar, dan SUV di Indonesia. Menyediakan platform pembelian daring yang aman, simulasi pembiayaan transparan, serta garansi resmi ATPM.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="https://instagram.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-youtube"></i></a>
+            <a href="https://facebook.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-facebook"></i></a>
+            <a href="https://whatsapp.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Tautan Navigasi -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Ekosistem Web</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="utama.html" class="fw-bold text-white"><i class="bi bi-stars text-warning me-1"></i>Portal Utama</a></li>
+            <li><a href="index.html">Beranda & Profil</a></li>
+            <li><a href="produk.html">Katalog Penjualan</a></li>
+            <li><a href="promosi.html">Promo & Diskon</a></li>
+            <li><a href="komunitas.html">Forum Komunitas</a></li>
+            <li><a href="transaksi.html">Form Pemesanan Unit</a></li>
+          </ul>
+        </div>
+
+        <!-- Layanan Pelanggan -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Layanan Showroom</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="transaksi.html">Simulasi Kredit & DP Rendah</a></li>
+            <li><a href="produk.html">Uji Kelayakan 150 Titik</a></li>
+            <li><a href="promosi.html">Tukar Tambah (Trade-In)</a></li>
+            <li><a href="komunitas.html">Tanya Montir Terakreditasi</a></li>
+            <li><a href="transaksi.html">Jadwal Uji Kemudi (Test Drive)</a></li>
+          </ul>
+        </div>
+
+        <!-- Kantor & Kontak Cabang -->
+        <div class="col-lg-3 col-md-6">
+          <h5>Pusat Pelayanan</h5>
+          <p class="small text-secondary mb-2">
+            <i class="bi bi-geo-alt-fill text-danger me-2"></i><strong>Showroom Pusat:</strong><br>
+            Gedung AutoNova Tower Lt. 1-3, Jl. Jend. Sudirman Kav. 88, Karet Semanggi, Jakarta Selatan 12930.
+          </p>
+          <p class="small text-secondary mb-2">
+            <i class="bi bi-telephone-fill text-success me-2"></i><strong>Hotline 24 Jam:</strong> 0800-1-AUTONOVA
+          </p>
+          <p class="small text-secondary mb-0">
+            <i class="bi bi-envelope-fill text-primary me-2"></i><strong>Email Resmi:</strong> cs@autonova-nusantara.co.id
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <div>
+          &copy; 2026 PT AutoNova Nusantara Motor. Seluruh Hak Cipta Dilindungi Undang-Undang.
+        </div>
+        <div class="d-flex gap-3 small text-secondary">
+          <span>Kebijakan Privasi</span>
+          <span>&bull;</span>
+          <span>Syarat & Ketentuan Transaksi</span>
+          <span>&bull;</span>
+          <span>Garansi Resmi</span>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- =========================================
-       JAVASCRIPT LOGIC
-       ========================================= -->
-  <script>
-    // 1. Navigation Controller (SPA Style)
-    function navigateTo(pageId) {
-      // Sembunyikan semua section
-      const sections = document.querySelectorAll('.view-section');
-      sections.forEach(sec => sec.classList.remove('active'));
+  <!-- ==========================================================================
+       11. MODAL KERANJANG PEMESANAN (OFFCANVAS / MODAL)
+       ========================================================================== -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold" id="cartModalLabel">
+            <i class="bi bi-cart3 me-2 text-warning"></i>Keranjang Pemesanan Kendaraan Anda
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div id="cartItemsList">
+            <!-- Dimuat secara dinamis oleh JavaScript -->
+          </div>
+          <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+            <h6 class="fw-bold mb-0">Total Estimasi Harga Unit:</h6>
+            <h4 class="car-price-tag mb-0" id="cartTotalPrice">Rp 0</h4>
+          </div>
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-outline-danger" onclick="clearCart()">Kosongkan</button>
+          <a href="transaksi.html" class="btn btn-an-primary">
+            <i class="bi bi-credit-card me-1"></i>Lanjut ke Formulir Pemesanan
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      // Tampilkan section yang dituju
-      const targetSec = document.getElementById('view-' + pageId);
-      if (targetSec) {
-        targetSec.classList.add('active');
-      }
+  <!-- ==========================================================================
+       12. MODAL DETAIL SPESIFIKASI KENDARAAN (QUICK VIEW)
+       ========================================================================== -->
+  <div class="modal fade" id="vehicleDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold" id="vehicleModalTitle">Detail Kendaraan</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="vehicleModalBody">
+          <!-- Diisi otomatis oleh JavaScript -->
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-an-primary" id="vehicleModalCtaBtn">
+            <i class="bi bi-bag-check-fill me-1"></i>Lanjutkan Pemesanan Unit Ini
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      // Update active state di menu desktop
-      const navItems = document.querySelectorAll('.nav-item');
-      navItems.forEach(item => {
-        if (item.getAttribute('data-page') === pageId) {
-          item.classList.add('active');
-        } else {
-          item.classList.remove('active');
-        }
-      });
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-      // Update breadcrumb text
-      const titles = {
-        'beranda': 'Beranda',
-        'layanan': 'Layanan & Solusi',
-        'portofolio': 'Galeri Portofolio',
-        'tentang': 'Tentang Kami',
-        'kontak': 'Pusat Kontak'
-      };
-      const breadcrumb = document.getElementById('breadcrumbCurrent');
-      if (breadcrumb && titles[pageId]) {
-        breadcrumb.textContent = titles[pageId];
-      }
-
-      // Scroll halus ke atas
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // 2. Filter Cards di Halaman Beranda
-    function filterCards(category, btnElement) {
-      const tabs = document.querySelectorAll('.filter-tab');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      btnElement.classList.add('active');
-
-      const cards = document.querySelectorAll('.nav-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.style.display = 'flex';
-          card.style.animation = 'fadeInSlide 0.3s ease forwards';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // 3. Dark/Light Mode Theme Toggle
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', targetTheme);
-      localStorage.setItem('naviverse-theme', targetTheme);
-      updateThemeIcon(targetTheme);
-    }
-
-    function updateThemeIcon(theme) {
-      const icon = document.getElementById('themeIcon');
-      if (theme === 'dark') {
-        // Icon Matahari (Sun)
-        icon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
-      } else {
-        // Icon Bulan (Moon)
-        icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
-      }
-    }
-
-    // Load saved theme preference
-    (function initTheme() {
-      const savedTheme = localStorage.getItem('naviverse-theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeIcon(savedTheme);
-    })();
-
-    // 4. Mobile Drawer Navigation
-    function toggleMobileMenu() {
-      const drawer = document.getElementById('mobileDrawer');
-      const hamburger = document.getElementById('hamburgerBtn');
-      drawer.classList.toggle('open');
-      hamburger.classList.toggle('active');
-    }
-
-    // 5. Search Modal (Command Palette Ctrl+K)
-    function openSearchModal() {
-      const modal = document.getElementById('searchModal');
-      const input = document.getElementById('searchInput');
-      modal.classList.add('active');
-      input.value = '';
-      handleSearchFilter();
-      setTimeout(() => input.focus(), 100);
-    }
-
-    function closeSearchModal() {
-      const modal = document.getElementById('searchModal');
-      modal.classList.remove('active');
-    }
-
-    function handleBackdropClick(event) {
-      if (event.target.id === 'searchModal') {
-        closeSearchModal();
-      }
-    }
-
-    function quickNav(pageId) {
-      closeSearchModal();
-      navigateTo(pageId);
-    }
-
-    function handleSearchFilter() {
-      const query = document.getElementById('searchInput').value.toLowerCase();
-      const items = document.querySelectorAll('.search-result-item');
-      items.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        if (text.includes(query)) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-
-    // Keyboard Shortcuts (Ctrl+K or Cmd+K and ESC)
-    window.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault();
-        openSearchModal();
-      }
-      if (e.key === 'Escape') {
-        closeSearchModal();
-      }
-    });
-  </script>
+  <!-- Custom JavaScript Core -->
+  <script src="js/main.js"></script>
 </body>
 </html>

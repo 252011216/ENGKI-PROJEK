@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Program Pemasaran & Promo Spesial AutoNova Nusantara - Diskon Subsidi DP Rp 25 Juta, Bunga Kredit 0%, Paket Perawatan Gratis, dan Voucher Eksklusif Mobil 2026.">
+  <meta name="keywords" content="promo mobil 2026, diskon mobil baru, subsidi dp mobil listrik, promo trade in mobil, voucher autonova, paket servis mobil gratis">
+  <meta name="author" content="AutoNova Nusantara">
+  <title>Pemasaran & Promo Eksklusif | AutoNova Nusantara</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons & FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. TOPBAR INFORMASI SHOWROOM
+       ========================================================================== -->
+  <div class="topbar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-4">
+        <span><i class="bi bi-geo-alt-fill text-danger me-1"></i> Showroom Pusat: Gedung AutoNova, Jl. Jend. Sudirman No. 88, Jakarta Selatan</span>
+        <span><i class="bi bi-clock-fill text-warning me-1"></i> Buka Setiap Hari: 08:30 - 20:00 WIB</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="bi bi-telephone-fill text-success me-1"></i> Hotline Promosi: <strong>0800-1-AUTONOVA</strong></span>
+        <span class="text-secondary">|</span>
+        <a href="utama.html" class="badge bg-primary text-white text-decoration-none px-2 py-1"><i class="bi bi-stars me-1"></i>Portal Terpadu (utama.html)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. NAVBAR UTAMA (NAV MENU RESPONSIF)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-autonova sticky-top">
+    <div class="container">
+      
+      <!-- Brand Logo -->
+      <a class="navbar-brand-logo" href="index.html">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-car-side"></i>
+        </div>
+        <div>
+          <span>AutoNova</span>
+          <span class="brand-badge ms-1">Nusantara</span>
+        </div>
+      </a>
+
+      <!-- Tombol Aksi Mobile (Keranjang & Hamburger) -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="btn btn-light position-relative p-2 border open-cart-modal-btn" aria-label="Keranjang Pemesanan">
+          <i class="bi bi-cart3 fs-5 text-dark"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge" style="display:none;">0</span>
+        </button>
+        <button class="navbar-toggler border-0 p-2 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Buka navigasi">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Menu Navigasi Desktop & Mobile Collapse -->
+      <div class="collapse navbar-collapse" id="navbarMainContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="index.html">
+              <i class="bi bi-house-door-fill me-1"></i> Beranda & Profil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="produk.html">
+              <i class="bi bi-grid-fill me-1"></i> Katalog Penjualan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" aria-current="page" href="promosi.html">
+              <i class="bi bi-tag-fill me-1 text-danger"></i> Promo & Diskon
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="komunitas.html">
+              <i class="bi bi-chat-square-text-fill me-1 text-info"></i> Forum Komunitas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="transaksi.html">
+              <i class="bi bi-receipt-cutoff me-1 text-success"></i> Form Pemesanan
+            </a>
+          </li>
+        </ul>
+
+        <!-- Action Items Sebelah Kanan (Desktop) -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <button class="btn btn-outline-secondary position-relative px-3 py-2 open-cart-modal-btn" title="Lihat Keranjang Pemesanan">
+            <i class="bi bi-cart3 me-1"></i>
+            <span class="fw-semibold">Keranjang</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge" style="display:none;">0</span>
+          </button>
+          <a href="transaksi.html" class="btn btn-an-primary d-flex align-items-center gap-2">
+            <i class="bi bi-lightning-charge-fill"></i>
+            <span>Pesan Unit Baru</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       3. BREADCRUMB & PROMO HERO BANNER DENGAN COUNTDOWN
+       ========================================================================== -->
+  <div class="bg-white border-bottom py-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none">Beranda</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Pemasaran & Promosi Eksklusif</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <section class="container my-4">
+    <div class="promo-hero-banner">
+      <div class="row align-items-center g-4">
+        
+        <div class="col-lg-7">
+          <span class="badge bg-danger text-white fw-bold px-3 py-2 mb-3 text-uppercase shadow-sm">
+            <i class="bi bi-lightning-charge-fill me-1"></i> Flash Sale & Kampanye Spesial 2026
+          </span>
+          <h1 class="display-5 fw-extrabold text-white mb-3" style="line-height: 1.15;">
+            Super Deals 2026: Subsidi DP Rp 25 Juta & Bunga 0%
+          </h1>
+          <p class="lead text-light mb-4" style="font-size: 1.1rem;">
+            Raih kesempatan terbatas untuk membawa pulang mobil impian Anda dengan fasilitas pembiayaan tanpa bunga, bebas premi asuransi tahun pertama, dan kupon servis resmi bernilai jutaan rupiah.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="transaksi.html" class="btn btn-warning btn-lg fw-bold text-dark px-4 shadow">
+              <i class="bi bi-check2-circle me-1"></i>Klaim Promo di Formulir Pemesanan
+            </a>
+            <a href="#voucher-section" class="btn btn-outline-light btn-lg px-4">
+              <i class="bi bi-ticket-perforated me-1"></i>Lihat Kode Voucher
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="p-4 rounded-4 bg-dark bg-opacity-75 border border-warning border-opacity-50 text-center shadow-lg">
+            <span class="badge bg-warning text-dark fw-bold px-3 py-1 text-uppercase mb-3">
+              <i class="bi bi-stopwatch-fill me-1"></i> Hitungan Mundur Penawaran
+            </span>
+            <div class="d-flex justify-content-center gap-2 mb-3">
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdDays">03</div>
+                <div class="countdown-lbl">Hari</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdHours">14</div>
+                <div class="countdown-lbl">Jam</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdMinutes">28</div>
+                <div class="countdown-lbl">Menit</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-val" id="cdSeconds">45</div>
+                <div class="countdown-lbl">Detik</div>
+              </div>
+            </div>
+            <p class="small text-light text-opacity-80 mb-0">
+              *Berlaku untuk seluruh pembelian unit mobil listrik, SUV, dan sportscar hingga batas waktu kuota tercapai.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. KARTU VOUCHER DISKON RESMI (DAPAT DISALIN INSTAN)
+       ========================================================================== -->
+  <section id="voucher-section" class="container my-5 py-2">
+    <div class="text-center mb-5">
+      <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-1 mb-2 text-uppercase">Kupon Diskon Otomotif</span>
+      <h2 class="fw-bold" style="color: var(--an-dark);">Voucher Potongan Harga Resmi</h2>
+      <p class="text-muted small">Salin kode voucher di bawah ini dan tempelkan langsung pada kolom kupon di halaman formulir transaksi.</p>
+    </div>
+
+    <div class="row g-4">
+      
+      <!-- Voucher 1 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="voucher-card h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-danger">Diskon Terbesar</span>
+              <small class="text-muted"><i class="bi bi-calendar-event me-1"></i>Hingga Akhir Bulan</small>
+            </div>
+            <h5 class="fw-bold mb-1 text-dark">Potongan Tunai / DP</h5>
+            <div class="fs-4 fw-extrabold text-primary mb-2">Rp 25.000.000</div>
+            <p class="small text-secondary mb-3">Berlaku untuk seluruh unit mobil baru (Tesla, Corvette, Jeep, Mustang, Audi, Ferrari).</p>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-center bg-white p-2 rounded border mb-2">
+              <span class="voucher-code-badge">AUTONOVA2026</span>
+              <button class="btn btn-sm btn-outline-primary" onclick="copyVoucherCode('AUTONOVA2026')">
+                <i class="bi bi-copy"></i> Salin
+              </button>
+            </div>
+            <small class="text-muted d-block text-center">*Tanpa minimum transaksi OTR</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voucher 2 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="voucher-card h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-success">Khusus EV</span>
+              <small class="text-muted"><i class="bi bi-lightning-charge me-1"></i>Subsidi Energi</small>
+            </div>
+            <h5 class="fw-bold mb-1 text-dark">Voucher Mobil Listrik</h5>
+            <div class="fs-4 fw-extrabold text-success mb-2">Rp 25.000.000</div>
+            <p class="small text-secondary mb-3">Termasuk paket instalasi gratis Wall Connector Charging di kediaman pembeli.</p>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-center bg-white p-2 rounded border mb-2">
+              <span class="voucher-code-badge">EVHERO</span>
+              <button class="btn btn-sm btn-outline-success" onclick="copyVoucherCode('EVHERO')">
+                <i class="bi bi-copy"></i> Salin
+              </button>
+            </div>
+            <small class="text-muted d-block text-center">*Berlaku khusus Tesla Model 3 EV</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voucher 3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="voucher-card h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-warning text-dark">Kredit Murah</span>
+              <small class="text-muted"><i class="bi bi-wallet2 me-1"></i>Pembiayaan</small>
+            </div>
+            <h5 class="fw-bold mb-1 text-dark">Cashback Cicilan</h5>
+            <div class="fs-4 fw-extrabold text-primary mb-2">Rp 25.000.000</div>
+            <p class="small text-secondary mb-3">Potongan langsung pada uang muka (DP) saat memilih simulasi kredit leasing.</p>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-center bg-white p-2 rounded border mb-2">
+              <span class="voucher-code-badge">SUPERDEAL</span>
+              <button class="btn btn-sm btn-outline-primary" onclick="copyVoucherCode('SUPERDEAL')">
+                <i class="bi bi-copy"></i> Salin
+              </button>
+            </div>
+            <small class="text-muted d-block text-center">*Tenor kredit minimal 24 bulan</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voucher 4 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="voucher-card h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-info text-dark">Komunitas</span>
+              <small class="text-muted"><i class="bi bi-people me-1"></i>Member Baru</small>
+            </div>
+            <h5 class="fw-bold mb-1 text-dark">Bonus Komunitas</h5>
+            <div class="fs-4 fw-extrabold text-info mb-2">Rp 10.000.000</div>
+            <p class="small text-secondary mb-3">Potongan khusus untuk anggota terdaftar AutoNova Club Indonesia.</p>
+          </div>
+          <div>
+            <div class="d-flex justify-content-between align-items-center bg-white p-2 rounded border mb-2">
+              <span class="voucher-code-badge">MEMBERNEW</span>
+              <button class="btn btn-sm btn-outline-info" onclick="copyVoucherCode('MEMBERNEW')">
+                <i class="bi bi-copy"></i> Salin
+              </button>
+            </div>
+            <small class="text-muted d-block text-center">*Gunakan email member terverifikasi</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. PAKET BUNDEL PROMO PEMASARAN
+       ========================================================================== -->
+  <section class="py-5 bg-white border-top border-bottom">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+        <div>
+          <span class="badge bg-danger-subtle text-danger fw-bold px-3 py-2 mb-2 text-uppercase">
+            <i class="bi bi-box-seam-fill me-1"></i> Nilai Tambah Pemasaran
+          </span>
+          <h2 class="fw-bold mb-1" style="color: var(--an-dark);">Paket Bundel Hemat Servis & Aksesoris</h2>
+          <p class="text-secondary small mb-0">Nikmati penghematan hingga puluhan juta rupiah dengan paket bundling eksklusif dari AutoNova.</p>
+        </div>
+        <a href="transaksi.html" class="btn btn-an-primary mt-3 mt-md-0">Pesan Mobil dengan Bundel Ini</a>
+      </div>
+
+      <div class="row g-4">
+        
+        <!-- Bundel 1 -->
+        <div class="col-md-4">
+          <div class="card card-autonova p-4">
+            <div class="feature-icon-wrapper mb-3" style="width: 52px; height: 52px; font-size: 1.4rem;">
+              <i class="bi bi-shield-shaded"></i>
+            </div>
+            <span class="badge bg-primary-subtle text-primary align-self-start mb-2">Hemat Rp 12.000.000</span>
+            <h5 class="fw-bold mb-2">Bundel Ultimate Protection</h5>
+            <p class="text-secondary small mb-3 flex-grow-1">
+              Perlindungan menyeluruh bodi mobil baru Anda: Nano Ceramic Coating 9H sebanyak 3 layer tahan gores, Kaca Film V-Kool High Heat Rejection, serta Paint Protection Film di seluruh handel pintu.
+            </p>
+            <ul class="list-unstyled small text-muted mb-4 border-top pt-3">
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Garansi Kilap Bodi 3 Tahun</li>
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Kaca Film Tolak Panas 99% UV</li>
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Aplikasi oleh Detailing Master</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="text-muted small text-decoration-line-through">Rp 18.000.000</span>
+              <span class="fw-bold text-primary fs-5">Rp 6.000.000</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundel 2 -->
+        <div class="col-md-4">
+          <div class="card card-autonova p-4">
+            <div class="feature-icon-wrapper mb-3" style="width: 52px; height: 52px; font-size: 1.4rem;">
+              <i class="bi bi-tools"></i>
+            </div>
+            <span class="badge bg-success-subtle text-success align-self-start mb-2">GRATIS (Senilai Rp 15 Juta)</span>
+            <h5 class="fw-bold mb-2">Paket Servis Bebas Cemas 3 Tahun</h5>
+            <p class="text-secondary small mb-3 flex-grow-1">
+              Bebas seluruh biaya penggantian suku cadang fast-moving dan jasa mekanik berkala selama 3 tahun atau 60.000 KM di 24 bengkel resmi AutoNova di seluruh kota besar Indonesia.
+            </p>
+            <ul class="list-unstyled small text-muted mb-4 border-top pt-3">
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Penggantian Oli Sintetik & Filter</li>
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Pengecekan Komputer Diagnostik</li>
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Emergency Roadside Assistance 24 Jam</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="text-muted small text-decoration-line-through">Rp 15.000.000</span>
+              <span class="fw-bold text-success fs-5">Rp 0 (Bonus Pembelian)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundel 3 -->
+        <div class="col-md-4">
+          <div class="card card-autonova p-4">
+            <div class="feature-icon-wrapper mb-3" style="width: 52px; height: 52px; font-size: 1.4rem;">
+              <i class="bi bi-arrow-left-right"></i>
+            </div>
+            <span class="badge bg-warning-subtle text-warning-emphasis align-self-start mb-2">Bonus Cashback Rp 10 Juta</span>
+            <h5 class="fw-bold mb-2">Program Tukar Tambah (Trade-In)</h5>
+            <p class="text-secondary small mb-3 flex-grow-1">
+              Ganti mobil lama Anda merek apapun ke koleksi mobil sport, EV atau SUV AutoNova. Kami menjamin harga taksiran kendaraan lama Anda 10% s.d. 15% di atas harga pasar bursa mobil bekas.
+            </p>
+            <ul class="list-unstyled small text-muted mb-4 border-top pt-3">
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Inspeksi Gratis di Rumah Anda</li>
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Pencairan Cepat Hari yang Sama</li>
+              <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Bisa Dijadikan Tambahan DP Kredit</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center pt-2 border-top">
+              <span class="text-muted small">Taksiran Ekstra:</span>
+              <span class="fw-bold text-primary fs-5">+ 15% Nilai Pasar</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. FORMULIR PEMASARAN / LEAD SUBSCRIPTION VOUCHER
+       ========================================================================== -->
+  <section class="container my-5">
+    <div class="form-card-box bg-light border">
+      <div class="row align-items-center g-4">
+        
+        <div class="col-lg-6">
+          <span class="badge bg-primary text-white fw-bold px-3 py-1 mb-2 text-uppercase">
+            <i class="bi bi-envelope-check-fill me-1"></i> Buletin VIP AutoNova
+          </span>
+          <h3 class="fw-bold mb-2" style="color: var(--an-dark);">Dapatkan Info Flash Sale & Kupon Tambahan Rp 5 Juta</h3>
+          <p class="text-secondary small mb-4">
+            Daftarkan nama dan alamat email aktif Anda untuk mendapatkan kabar pertama saat ada unit lelang khusus, promo DP 0%, atau peluncuran mobil sport terbaru di Indonesia.
+          </p>
+          <div class="d-flex align-items-center gap-3">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-lock-fill text-success fs-5"></i>
+              <span class="small text-muted">Data dijamin rahasia & bebas spam.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <form onsubmit="event.preventDefault(); alert('Terima kasih! Anda telah terdaftar di Buletin Promo VIP AutoNova. Kupon diskon Rp 5.000.000 telah dikirimkan ke email Anda.'); this.reset();" class="bg-white p-4 rounded-3 border shadow-sm">
+            <div class="mb-3">
+              <label class="form-label-custom">Nama Lengkap</label>
+              <input type="text" class="form-control form-control-custom" placeholder="Contoh: Muhammad Reza" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-custom">Alamat Email Aktif</label>
+              <input type="email" class="form-control form-control-custom" placeholder="reza.otomotif@gmail.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-custom">Kategori Mobil yang Diminati</label>
+              <select class="form-select form-select-custom">
+                <option value="ev">Mobil Listrik (Tesla Model 3 EV)</option>
+                <option value="suv">SUV Offroad (Jeep Wrangler Rubicon)</option>
+                <option value="sport">Supercar & Sportscar (Corvette / Ferrari)</option>
+                <option value="all">Seluruh Kategori Promo</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-an-accent w-100 py-2">
+              <i class="bi bi-send-fill me-2"></i>Daftar & Klaim Kupon Tambahan
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. FOOTER
+       ========================================================================== -->
+  <footer class="footer-autonova">
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1.1rem;">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <h4 class="fw-bold text-white mb-0">AutoNova <span class="text-primary-emphasis">Nusantara</span></h4>
+          </div>
+          <p class="small text-secondary mb-4" style="line-height: 1.7;">
+            Pusat showroom resmi mobil premium dengan penawaran promosi terbaik, subsidi DP transparan, dan garansi resmi purnajual 5 tahun.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="https://instagram.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-youtube"></i></a>
+            <a href="https://whatsapp.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Menu Navigasi</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="utama.html" class="fw-bold text-white"><i class="bi bi-stars text-warning me-1"></i>Portal Utama</a></li>
+            <li><a href="index.html">Beranda & Profil</a></li>
+            <li><a href="produk.html">Katalog Penjualan</a></li>
+            <li><a href="promosi.html">Promo & Diskon</a></li>
+            <li><a href="komunitas.html">Forum Komunitas</a></li>
+            <li><a href="transaksi.html">Form Pemesanan Unit</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Program Pemasaran</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="promosi.html">Flash Sale Super Deals 2026</a></li>
+            <li><a href="promosi.html">Subsidi DP Mobil Listrik</a></li>
+            <li><a href="promosi.html">Tukar Tambah (Trade-In)</a></li>
+            <li><a href="promosi.html">Paket Proteksi Nano Ceramic</a></li>
+            <li><a href="promosi.html">Gratis Jasa Servis 3 Tahun</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Pusat Bantuan Promo</h5>
+          <p class="small text-secondary mb-2">
+            <i class="bi bi-geo-alt-fill text-danger me-2"></i>Jl. Jend. Sudirman Kav. 88, Jakarta Selatan.
+          </p>
+          <p class="small text-secondary mb-2">
+            <i class="bi bi-telephone-fill text-success me-2"></i><strong>0800-1-AUTONOVA</strong>
+          </p>
+          <p class="small text-secondary mb-0">
+            <i class="bi bi-envelope-fill text-primary me-2"></i>promo@autonova-nusantara.co.id
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <div>&copy; 2026 PT AutoNova Nusantara Motor. Hak Cipta Dilindungi.</div>
+        <div class="d-flex gap-3 small text-secondary">
+          <span>Ketentuan Promosi</span>
+          <span>&bull;</span>
+          <span>Kebijakan Subsidi OTR</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       8. MODAL KERANJANG PEMESANAN
+       ========================================================================== -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold" id="cartModalLabel">
+            <i class="bi bi-cart3 me-2 text-warning"></i>Keranjang Pemesanan Kendaraan Anda
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div id="cartItemsList"></div>
+          <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+            <h6 class="fw-bold mb-0">Total Estimasi Harga Unit:</h6>
+            <h4 class="car-price-tag mb-0" id="cartTotalPrice">Rp 0</h4>
+          </div>
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-outline-danger" onclick="clearCart()">Kosongkan</button>
+          <a href="transaksi.html" class="btn btn-an-primary">
+            <i class="bi bi-credit-card me-1"></i>Lanjut ke Formulir Pemesanan
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript Core -->
+  <script src="js/main.js"></script>
+</body>
+</html>
