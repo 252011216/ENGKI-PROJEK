@@ -4,6 +4,14 @@
  * Countdown flash sale promo, Filter produk & forum, serta Notifikasi invoice.
  */
 
+// Helper pendeteksi path aset agar berfungsi sempurna di root maupun subfolder /pages/
+function getAssetPath(path) {
+  if (!path || path.startsWith('http') || path.startsWith('data:')) return path;
+  const isInsidePages = window.location.pathname.replace(/\\/g, '/').includes('/pages/');
+  const cleanPath = path.replace(/^\.\.\//, '').replace(/^\//, '');
+  return (isInsidePages ? '../' : '') + cleanPath;
+}
+
 // Database Kendaraan Resmi AutoNova
 const AUTONOVA_VEHICLES = [
   {
@@ -203,7 +211,7 @@ function renderCartModal() {
     html += `
       <div class="list-group-item d-flex align-items-center justify-content-between py-3 px-2">
         <div class="d-flex align-items-center gap-3">
-          <img src="${item.image}" alt="${item.name}" style="width: 70px; height: 50px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1;">
+          <img src="${getAssetPath(item.image)}" alt="${item.name}" style="width: 70px; height: 50px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1;">
           <div>
             <h6 class="mb-1 fw-bold fs-6">${item.name}</h6>
             <div class="text-primary fw-semibold small">Rp ${item.price.toLocaleString('id-ID')} &times; ${item.qty}</div>
@@ -267,7 +275,7 @@ function showVehicleDetail(vehicleId) {
       <div class="row g-4">
         <div class="col-lg-6">
           <div class="rounded-3 overflow-hidden shadow-sm mb-3">
-            <img src="${v.image}" class="img-fluid w-100" alt="${v.name}" style="height: 280px; object-fit: cover;">
+            <img src="${getAssetPath(v.image)}" class="img-fluid w-100" alt="${v.name}" style="height: 280px; object-fit: cover;">
           </div>
           <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded-3 border">
             <div>
@@ -634,7 +642,7 @@ function initTransactionPage() {
       return;
     }
 
-    if (previewImg) previewImg.src = vehicle.image;
+    if (previewImg) previewImg.src = getAssetPath(vehicle.image);
     if (previewName) previewName.textContent = vehicle.name;
     if (previewPrice) previewPrice.textContent = 'Rp ' + vehicle.price.toLocaleString('id-ID');
     if (previewSpecs) previewSpecs.textContent = `${vehicle.specs.power} &bull; ${vehicle.specs.trans}`;

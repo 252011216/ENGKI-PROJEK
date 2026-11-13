@@ -1,0 +1,681 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Katalog Penjualan Mobil Resmi AutoNova Nusantara - Jual Beli Mobil Listrik, Supercar, SUV, dan Sedan Sport Baru dan Bersertifikat dengan Garansi Resmi 5 Tahun.">
+  <meta name="keywords" content="katalog mobil, jual mobil listrik, beli supercar indonesia, harga tesla jakarta, harga jeep rubicon, showroom online">
+  <meta name="author" content="AutoNova Nusantara">
+  <title>Katalog Penjualan Online | AutoNova Nusantara</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons & FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. TOPBAR INFORMASI SHOWROOM
+       ========================================================================== -->
+  <div class="topbar d-none d-md-block">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-4">
+        <span><i class="bi bi-geo-alt-fill text-danger me-1"></i> Showroom Pusat: Gedung AutoNova, Jl. Jend. Sudirman No. 88, Jakarta Selatan</span>
+        <span><i class="bi bi-clock-fill text-warning me-1"></i> Buka Setiap Hari: 08:30 - 20:00 WIB</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="bi bi-telephone-fill text-success me-1"></i> Hotline Penjualan: <strong>0800-1-AUTONOVA</strong></span>
+        <span class="text-secondary">|</span>
+        <a href="../index.html" class="badge bg-primary text-white text-decoration-none px-2 py-1"><i class="bi bi-stars me-1"></i>Halaman Utama (index.html)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. NAVBAR UTAMA (NAV MENU RESPONSIF)
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-autonova sticky-top">
+    <div class="container">
+      
+      <!-- Brand Logo -->
+      <a class="navbar-brand-logo" href="../index.html">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-car-side"></i>
+        </div>
+        <div>
+          <span>AutoNova</span>
+          <span class="brand-badge ms-1">Nusantara</span>
+        </div>
+      </a>
+
+      <!-- Tombol Aksi Mobile (Keranjang & Hamburger) -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <button class="btn btn-light position-relative p-2 border open-cart-modal-btn" aria-label="Keranjang Pemesanan">
+          <i class="bi bi-cart3 fs-5 text-dark"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge" style="display:none;">0</span>
+        </button>
+        <button class="navbar-toggler border-0 p-2 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainContent" aria-controls="navbarMainContent" aria-expanded="false" aria-label="Buka navigasi">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Menu Navigasi Desktop & Mobile Collapse -->
+      <div class="collapse navbar-collapse" id="navbarMainContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="../index.html">
+              <i class="bi bi-house-door-fill me-1"></i> Beranda & Profil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" aria-current="page" href="produk.html">
+              <i class="bi bi-grid-fill me-1"></i> Katalog Penjualan
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="promosi.html">
+              <i class="bi bi-tag-fill me-1 text-danger"></i> Promo & Diskon
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="komunitas.html">
+              <i class="bi bi-chat-square-text-fill me-1 text-info"></i> Forum Komunitas
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="transaksi.html">
+              <i class="bi bi-receipt-cutoff me-1 text-success"></i> Form Pemesanan
+            </a>
+          </li>
+        </ul>
+
+        <!-- Action Items Sebelah Kanan (Desktop) -->
+        <div class="d-none d-lg-flex align-items-center gap-3">
+          <button class="btn btn-outline-secondary position-relative px-3 py-2 open-cart-modal-btn" title="Lihat Keranjang Pemesanan">
+            <i class="bi bi-cart3 me-1"></i>
+            <span class="fw-semibold">Keranjang</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-counter-badge" style="display:none;">0</span>
+          </button>
+          <a href="transaksi.html" class="btn btn-an-primary d-flex align-items-center gap-2">
+            <i class="bi bi-lightning-charge-fill"></i>
+            <span>Pesan Unit Baru</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       3. BREADCRUMB & HEADER SECTION
+       ========================================================================== -->
+  <div class="bg-white border-bottom py-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none">Beranda</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Katalog Penjualan Online</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <section class="py-4 bg-light border-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-2 mb-2 text-uppercase">
+            <i class="bi bi-shield-check me-1"></i> Unit Ready Stock & Terverifikasi
+          </span>
+          <h1 class="fw-bold mb-2" style="color: var(--an-dark);">Katalog Penjualan Mobil Baru & Resmi</h1>
+          <p class="text-secondary mb-0">
+            Seluruh kendaraan dilengkapi sertifikat uji kelayakan 150-Point Inspection, garansi resmi pabrikan hingga 5 tahun, dokumen On-The-Road lengkap, dan opsi simulasi pembiayaan syariah maupun konvensional.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+          <a href="transaksi.html" class="btn btn-an-accent">
+            <i class="bi bi-calculator me-1"></i>Simulasi Kredit Transaksi
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. FILTER, SEARCH & SORT CONTROLLER
+       ========================================================================== -->
+  <section class="container my-4">
+    <div class="bg-white p-3 p-md-4 rounded-3 border shadow-sm">
+      <div class="row g-3 align-items-center justify-content-between">
+        
+        <!-- Filter Kategori Tombol -->
+        <div class="col-lg-6 col-12">
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-sm btn-primary product-filter-btn active" data-category="all">Semua Kategori</button>
+            <button class="btn btn-sm btn-outline-secondary product-filter-btn" data-category="ev">Mobil Listrik (EV)</button>
+            <button class="btn btn-sm btn-outline-secondary product-filter-btn" data-category="sport">Supercar & Sport</button>
+            <button class="btn btn-sm btn-outline-secondary product-filter-btn" data-category="suv">SUV 4x4 Offroad</button>
+          </div>
+        </div>
+
+        <!-- Pencarian & Sorting -->
+        <div class="col-lg-6 col-12">
+          <div class="row g-2">
+            <div class="col-sm-7">
+              <div class="input-group input-group-sm">
+                <span class="input-group-text bg-white"><i class="bi bi-search text-muted"></i></span>
+                <input type="text" id="productSearchInput" class="form-control" placeholder="Cari nama mobil, tipe mesin...">
+              </div>
+            </div>
+            <div class="col-sm-5">
+              <select id="productSortSelect" class="form-select form-select-sm" aria-label="Urutkan Produk">
+                <option value="featured">Urutkan: Rekomendasi</option>
+                <option value="price-low">Harga: Termurah &rarr; Termahal</option>
+                <option value="price-high">Harga: Termahal &rarr; Termurah</option>
+                <option value="name-az">Nama Model: A &rarr; Z</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. GRID DAFTAR PRODUK PENJUALAN LENGKAP
+       ========================================================================== -->
+  <section class="container mb-5">
+    <div class="row g-4" id="productsGridContainer">
+      
+      <!-- Mobil 1: Tesla Model 3 EV -->
+      <div class="col-lg-4 col-md-6 product-item-card" data-category="ev" data-price="1150000000" data-name="Tesla Model 3 EV Long Range">
+        <div class="card-autonova">
+          <div class="card-img-wrapper">
+            <span class="badge bg-primary badge-floating">Paling Populer</span>
+            <span class="badge-stock"><i class="bi bi-check2 me-1"></i>Ready 3 Unit</span>
+            <img src="../images/mobil1.jpg" alt="Tesla Model 3 EV Long Range">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-light text-secondary border">Mobil Listrik (EV)</span>
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span class="text-muted ms-1">(4.9)</span>
+              </div>
+            </div>
+            <h5 class="fw-bold mb-2 car-title">Tesla Model 3 EV Long Range</h5>
+            <div class="car-price-tag mb-3">Rp 1.150.000.000</div>
+            
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="spec-chip"><i class="bi bi-lightning-charge text-primary"></i> 576 KM Range</span>
+              <span class="spec-chip"><i class="bi bi-speedometer2 text-danger"></i> 450 HP AWD</span>
+              <span class="spec-chip"><i class="bi bi-people text-secondary"></i> 5 Kursi</span>
+            </div>
+
+            <p class="text-secondary small mb-4 flex-grow-1 car-desc">
+              Sedan pintar bertenaga listrik murni dengan baterai 78.1 kWh, akselerasi 0-100 km/j dalam 3.3 detik, dan sistem Full Self-Driving Ready.
+            </p>
+
+            <div class="d-flex flex-column gap-2 pt-3 border-top mt-auto">
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick="showVehicleDetail('tesla-model-3')">
+                  <i class="bi bi-info-circle me-1"></i>Spesifikasi
+                </button>
+                <button class="btn btn-outline-primary btn-sm flex-grow-1" onclick="addToCart('tesla-model-3')">
+                  <i class="bi bi-cart-plus me-1"></i>+ Keranjang
+                </button>
+              </div>
+              <button class="btn btn-an-primary btn-sm w-100" onclick="directBuy('tesla-model-3')">
+                <i class="bi bi-lightning-charge me-1"></i>Pesan Sekarang & Simulasi Kredit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobil 2: Corvette Stingray C8 -->
+      <div class="col-lg-4 col-md-6 product-item-card" data-category="sport" data-price="2850000000" data-name="Chevrolet Corvette Stingray C8">
+        <div class="card-autonova">
+          <div class="card-img-wrapper">
+            <span class="badge bg-danger badge-floating">Super Performa</span>
+            <span class="badge-stock"><i class="bi bi-check2 me-1"></i>Ready 1 Unit</span>
+            <img src="../images/mobil2.jpg" alt="Corvette Stingray C8 Mid-Engine">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-light text-secondary border">Supercar</span>
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <span class="text-muted ms-1">(4.8)</span>
+              </div>
+            </div>
+            <h5 class="fw-bold mb-2 car-title">Chevrolet Corvette Stingray C8</h5>
+            <div class="car-price-tag mb-3" style="color: var(--an-accent);">Rp 2.850.000.000</div>
+            
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="spec-chip"><i class="bi bi-fuel-pump text-danger"></i> 6.2L V8 Engine</span>
+              <span class="spec-chip"><i class="bi bi-speedometer2 text-danger"></i> 495 HP</span>
+              <span class="spec-chip"><i class="bi bi-stopwatch text-primary"></i> 0-100 in 2.9s</span>
+            </div>
+
+            <p class="text-secondary small mb-4 flex-grow-1 car-desc">
+              Supercar legendaris bermesin tengah Mid-Engine dengan transmisi 8-speed dual-clutch dan knalpot sport performa tinggi.
+            </p>
+
+            <div class="d-flex flex-column gap-2 pt-3 border-top mt-auto">
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick="showVehicleDetail('corvette-c8')">
+                  <i class="bi bi-info-circle me-1"></i>Spesifikasi
+                </button>
+                <button class="btn btn-outline-primary btn-sm flex-grow-1" onclick="addToCart('corvette-c8')">
+                  <i class="bi bi-cart-plus me-1"></i>+ Keranjang
+                </button>
+              </div>
+              <button class="btn btn-an-primary btn-sm w-100" onclick="directBuy('corvette-c8')">
+                <i class="bi bi-lightning-charge me-1"></i>Pesan Sekarang & Simulasi Kredit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobil 3: Jeep Wrangler Rubicon -->
+      <div class="col-lg-4 col-md-6 product-item-card" data-category="suv" data-price="1750000000" data-name="Jeep Wrangler Rubicon 4x4">
+        <div class="card-autonova">
+          <div class="card-img-wrapper">
+            <span class="badge bg-success badge-floating">Tangguh Ekstrem</span>
+            <span class="badge-stock"><i class="bi bi-check2 me-1"></i>Ready 2 Unit</span>
+            <img src="../images/mobil3.jpg" alt="Jeep Wrangler Rubicon 4x4">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-light text-secondary border">SUV 4x4 Off-Road</span>
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span class="text-muted ms-1">(5.0)</span>
+              </div>
+            </div>
+            <h5 class="fw-bold mb-2 car-title">Jeep Wrangler Rubicon 4x4</h5>
+            <div class="car-price-tag mb-3">Rp 1.750.000.000</div>
+            
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="spec-chip"><i class="bi bi-compass text-success"></i> Rock-Trac 4WD</span>
+              <span class="spec-chip"><i class="bi bi-gear-wide text-primary"></i> 2.0L Turbo</span>
+              <span class="spec-chip"><i class="bi bi-shield text-secondary"></i> Dana 44 Axle</span>
+            </div>
+
+            <p class="text-secondary small mb-4 flex-grow-1 car-desc">
+              SUV penjelajah terbaik di kelasnya dengan gardan Dana 44 heavy-duty, fitur disconnect sway-bar elektrik, dan atap modular terbuka.
+            </p>
+
+            <div class="d-flex flex-column gap-2 pt-3 border-top mt-auto">
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick="showVehicleDetail('jeep-rubicon')">
+                  <i class="bi bi-info-circle me-1"></i>Spesifikasi
+                </button>
+                <button class="btn btn-outline-primary btn-sm flex-grow-1" onclick="addToCart('jeep-rubicon')">
+                  <i class="bi bi-cart-plus me-1"></i>+ Keranjang
+                </button>
+              </div>
+              <button class="btn btn-an-primary btn-sm w-100" onclick="directBuy('jeep-rubicon')">
+                <i class="bi bi-lightning-charge me-1"></i>Pesan Sekarang & Simulasi Kredit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobil 4: Audi RS5 Coupe -->
+      <div class="col-lg-4 col-md-6 product-item-card" data-category="sport" data-price="2100000000" data-name="Audi RS5 Coupe Quattro">
+        <div class="card-autonova">
+          <div class="card-img-wrapper">
+            <span class="badge bg-dark badge-floating">Eksklusif</span>
+            <span class="badge-stock"><i class="bi bi-check2 me-1"></i>Ready 2 Unit</span>
+            <img src="../images/mobil4.jpg" alt="Audi RS5 Coupe Quattro">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-light text-secondary border">Gran Turismo Coupe</span>
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <span class="text-muted ms-1">(4.8)</span>
+              </div>
+            </div>
+            <h5 class="fw-bold mb-2 car-title">Audi RS5 Coupe Quattro</h5>
+            <div class="car-price-tag mb-3">Rp 2.100.000.000</div>
+            
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="spec-chip"><i class="bi bi-speedometer2 text-danger"></i> 444 HP V6 Bi-Turbo</span>
+              <span class="spec-chip"><i class="bi bi-arrows-fullscreen text-primary"></i> Quattro AWD</span>
+              <span class="spec-chip"><i class="bi bi-stopwatch text-secondary"></i> 0-100 in 3.7s</span>
+            </div>
+
+            <p class="text-secondary small mb-4 flex-grow-1 car-desc">
+              Gran Turismo elegan bertenaga 2.9L Bi-Turbo V6 dengan audio Bang & Olufsen 3D Sound System dan kemewahan jok kulit Nappa balap.
+            </p>
+
+            <div class="d-flex flex-column gap-2 pt-3 border-top mt-auto">
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick="showVehicleDetail('audi-rs5')">
+                  <i class="bi bi-info-circle me-1"></i>Spesifikasi
+                </button>
+                <button class="btn btn-outline-primary btn-sm flex-grow-1" onclick="addToCart('audi-rs5')">
+                  <i class="bi bi-cart-plus me-1"></i>+ Keranjang
+                </button>
+              </div>
+              <button class="btn btn-an-primary btn-sm w-100" onclick="directBuy('audi-rs5')">
+                <i class="bi bi-lightning-charge me-1"></i>Pesan Sekarang & Simulasi Kredit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobil 5: Ferrari 488 GTB -->
+      <div class="col-lg-4 col-md-6 product-item-card" data-category="sport" data-price="5950000000" data-name="Ferrari 488 GTB Supercar">
+        <div class="card-autonova">
+          <div class="card-img-wrapper">
+            <span class="badge bg-danger badge-floating">Koleksi Terbatas</span>
+            <span class="badge-stock"><i class="bi bi-eye me-1"></i>Showroom Display</span>
+            <img src="../images/mobil5.jpg" alt="Ferrari 488 GTB Supercar">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-light text-secondary border">Supercar Italia</span>
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span class="text-muted ms-1">(5.0)</span>
+              </div>
+            </div>
+            <h5 class="fw-bold mb-2 car-title">Ferrari 488 GTB Supercar</h5>
+            <div class="car-price-tag mb-3" style="color: var(--an-accent);">Rp 5.950.000.000</div>
+            
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="spec-chip"><i class="bi bi-fire text-danger"></i> 661 HP Twin-Turbo</span>
+              <span class="spec-chip"><i class="bi bi-speedometer text-danger"></i> Top 330 km/h</span>
+              <span class="spec-chip"><i class="bi bi-stopwatch text-primary"></i> 0-100 in 3.0s</span>
+            </div>
+
+            <p class="text-secondary small mb-4 flex-grow-1 car-desc">
+              Mahakarya Maranello dengan mesin 3.9L Twin-Turbo V8 peraih penghargaan dunia, transmisi balap F1 Dual-Clutch 7-percepatan.
+            </p>
+
+            <div class="d-flex flex-column gap-2 pt-3 border-top mt-auto">
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick="showVehicleDetail('ferrari-488')">
+                  <i class="bi bi-info-circle me-1"></i>Spesifikasi
+                </button>
+                <button class="btn btn-outline-primary btn-sm flex-grow-1" onclick="addToCart('ferrari-488')">
+                  <i class="bi bi-cart-plus me-1"></i>+ Keranjang
+                </button>
+              </div>
+              <button class="btn btn-an-primary btn-sm w-100" onclick="directBuy('ferrari-488')">
+                <i class="bi bi-lightning-charge me-1"></i>Pesan Sekarang & Simulasi Kredit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobil 6: Ford Mustang GT 5.0 -->
+      <div class="col-lg-4 col-md-6 product-item-card" data-category="sport" data-price="1680000000" data-name="Ford Mustang GT Fastback 5.0">
+        <div class="card-autonova">
+          <div class="card-img-wrapper">
+            <span class="badge bg-warning text-dark badge-floating">American Muscle</span>
+            <span class="badge-stock"><i class="bi bi-check2 me-1"></i>Ready 4 Unit</span>
+            <img src="../images/mobil6.jpg" alt="Ford Mustang GT Fastback 5.0">
+          </div>
+          <div class="p-4 d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-light text-secondary border">Muscle Car</span>
+              <div class="text-warning small">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <span class="text-muted ms-1">(4.9)</span>
+              </div>
+            </div>
+            <h5 class="fw-bold mb-2 car-title">Ford Mustang GT Fastback 5.0</h5>
+            <div class="car-price-tag mb-3">Rp 1.680.000.000</div>
+            
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="spec-chip"><i class="bi bi-volume-up text-danger"></i> Coyote 5.0L V8</span>
+              <span class="spec-chip"><i class="bi bi-speedometer2 text-danger"></i> 450 HP</span>
+              <span class="spec-chip"><i class="bi bi-gear-wide text-primary"></i> 10-Speed Auto</span>
+            </div>
+
+            <p class="text-secondary small mb-4 flex-grow-1 car-desc">
+              Muscle car sejati dengan raungan knalpot Active Valve Exhaust yang berkarakter, transmisi otomatis 10-speed, dan klaster digital modern.
+            </p>
+
+            <div class="d-flex flex-column gap-2 pt-3 border-top mt-auto">
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-secondary btn-sm flex-grow-1" onclick="showVehicleDetail('mustang-gt')">
+                  <i class="bi bi-info-circle me-1"></i>Spesifikasi
+                </button>
+                <button class="btn btn-outline-primary btn-sm flex-grow-1" onclick="addToCart('mustang-gt')">
+                  <i class="bi bi-cart-plus me-1"></i>+ Keranjang
+                </button>
+              </div>
+              <button class="btn btn-an-primary btn-sm w-100" onclick="directBuy('mustang-gt')">
+                <i class="bi bi-lightning-charge me-1"></i>Pesan Sekarang & Simulasi Kredit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. 4 LANGKAH MUDAH PEMESANAN MOBIL ONLINE
+       ========================================================================== -->
+  <section class="py-5 bg-white border-top border-bottom">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge bg-primary-subtle text-primary fw-bold px-3 py-1 mb-2 text-uppercase">Prosedur Transaksi</span>
+        <h3 class="fw-bold" style="color: var(--an-dark);">Cara Mudah Membeli Mobil Secara Online</h3>
+        <p class="text-muted small">Kemudahan memesan mobil impian dari kenyamanan rumah Anda dengan kepastian hukum dan garansi penuh.</p>
+      </div>
+
+      <div class="row g-4 text-center">
+        <div class="col-md-3 col-sm-6">
+          <div class="p-3">
+            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4 shadow-sm" style="width: 60px; height: 60px;">1</div>
+            <h5 class="fw-bold mb-2">Pilih Unit Kendaraan</h5>
+            <p class="text-muted small mb-0">Eksplorasi model, warna, dan spesifikasi lengkap yang sesuai dengan kebutuhan Anda.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="p-3">
+            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4 shadow-sm" style="width: 60px; height: 60px;">2</div>
+            <h5 class="fw-bold mb-2">Isi Formulir Booking</h5>
+            <p class="text-muted small mb-0">Lengkapi data diri, alamat, serta pilih skema pembayaran tunai atau simulasi kredit cicilan.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="p-3">
+            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4 shadow-sm" style="width: 60px; height: 60px;">3</div>
+            <h5 class="fw-bold mb-2">Verifikasi & Uji Kemudi</h5>
+            <p class="text-muted small mb-0">Konsultan AutoNova menghubungi Anda dalam 15 menit untuk jadwal test drive dan pengurusan dokumen.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="p-3">
+            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fw-bold fs-4 shadow-sm" style="width: 60px; height: 60px;">4</div>
+            <h5 class="fw-bold mb-2">Pengiriman Unit ke Garasi</h5>
+            <p class="text-muted small mb-0">Mobil diantar menggunakan towing khusus bergaransi tiba aman tepat di depan rumah Anda.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. FOOTER
+       ========================================================================== -->
+  <footer class="footer-autonova">
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1.1rem;">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <h4 class="fw-bold text-white mb-0">AutoNova <span class="text-primary-emphasis">Nusantara</span></h4>
+          </div>
+          <p class="small text-secondary mb-4" style="line-height: 1.7;">
+            Pusat penjualan mobil terpercaya dengan unit bergaransi ATPM, uji kelayakan 150 titik, dan pengantaran seluruh Indonesia.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="https://instagram.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-youtube"></i></a>
+            <a href="https://whatsapp.com" class="btn btn-outline-light btn-sm rounded-circle" style="width: 36px; height: 36px; padding: 6px;"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Menu Navigasi</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="../index.html" class="fw-bold text-white"><i class="bi bi-stars text-warning me-1"></i>Portal Utama</a></li>
+            <li><a href="../index.html">Beranda & Profil</a></li>
+            <li><a href="produk.html">Katalog Penjualan</a></li>
+            <li><a href="promosi.html">Promo & Diskon</a></li>
+            <li><a href="komunitas.html">Forum Komunitas</a></li>
+            <li><a href="transaksi.html">Form Pemesanan Unit</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Kategori Populer</h5>
+          <ul class="list-unstyled small d-flex flex-column gap-2">
+            <li><a href="produk.html">Tesla Model 3 Listrik</a></li>
+            <li><a href="produk.html">Chevrolet Corvette C8</a></li>
+            <li><a href="produk.html">Jeep Wrangler Rubicon</a></li>
+            <li><a href="produk.html">Audi RS5 Quattro</a></li>
+            <li><a href="produk.html">Ford Mustang GT 5.0</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h5>Kontak Showroom</h5>
+          <p class="small text-secondary mb-2">
+            <i class="bi bi-geo-alt-fill text-danger me-2"></i>Jl. Jend. Sudirman Kav. 88, Jakarta Selatan 12930.
+          </p>
+          <p class="small text-secondary mb-2">
+            <i class="bi bi-telephone-fill text-success me-2"></i><strong>0800-1-AUTONOVA</strong>
+          </p>
+          <p class="small text-secondary mb-0">
+            <i class="bi bi-envelope-fill text-primary me-2"></i>sales@autonova-nusantara.co.id
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <div>&copy; 2026 PT AutoNova Nusantara Motor. Hak Cipta Dilindungi.</div>
+        <div class="d-flex gap-3 small text-secondary">
+          <span>Kebijakan Garansi</span>
+          <span>&bull;</span>
+          <span>Syarat Pembelian Online</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       8. MODAL KERANJANG PEMESANAN
+       ========================================================================== -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold" id="cartModalLabel">
+            <i class="bi bi-cart3 me-2 text-warning"></i>Keranjang Pemesanan Kendaraan Anda
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div id="cartItemsList"></div>
+          <div class="d-flex justify-content-between align-items-center mt-4 pt-3 border-top">
+            <h6 class="fw-bold mb-0">Total Estimasi Harga Unit:</h6>
+            <h4 class="car-price-tag mb-0" id="cartTotalPrice">Rp 0</h4>
+          </div>
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-outline-danger" onclick="clearCart()">Kosongkan</button>
+          <a href="transaksi.html" class="btn btn-an-primary">
+            <i class="bi bi-credit-card me-1"></i>Lanjut ke Formulir Pemesanan
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       9. MODAL DETAIL SPESIFIKASI KENDARAAN (QUICK VIEW)
+       ========================================================================== -->
+  <div class="modal fade" id="vehicleDetailModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title fw-bold" id="vehicleModalTitle">Detail Kendaraan</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="vehicleModalBody"></div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Tutup</button>
+          <button type="button" class="btn btn-an-primary" id="vehicleModalCtaBtn">
+            <i class="bi bi-bag-check-fill me-1"></i>Lanjutkan Pemesanan Unit Ini
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript Core -->
+  <script src="../js/main.js"></script>
+</body>
+</html>
+
+
